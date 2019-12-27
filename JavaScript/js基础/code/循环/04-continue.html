@@ -12,12 +12,12 @@
     <script>
         // 打印1 2 3 直到遇到第一个即可以被3整除又可以被5整除的数为止
         for (var i = 1; i < 50; i++) {
-            console.log(i);
             // 判断i是否满足即可以被3整除又可以被5整除
             if (i % 3 === 0 && i % 5 === 0) {
+                // console.log("ok");
                 continue;
             }
-            console.log("ok");
+            console.log(i);
         }
     </script>
 </body>
