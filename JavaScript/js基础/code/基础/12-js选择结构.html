@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 满16周岁 可以考取驾照*/
+        var age = 20;
+        if (age >= 16) {
+            // 条件成立执行大括号的内容
+            alert("恭喜，您可以报名学习驾照");
+        }
+        alert("over");
+
+        /* if-else*/
+        var age = 10;
+        if (age >= 16) {
+            // 条件成立执行大括号的内容
+            alert("恭喜，您可以报名学习驾照");
+        } else {
+            // 条件不成立时候执行下面代码
+            alert("年龄不符合要求");
+        }
+        alert("over");
+
+        /* 多分支*/
+        // 90以上A 80~89 B 60~80 C <60 D 输入一个成绩 打印他的等级
+        var score = parseFloat(prompt("请输入你的分数"));
+        if (score >= 90) {
+            alert("A");
+        } else if (score >= 80) {
+            alert("B");
+        } else if (score >= 60) {
+            alert("C");
+        } else {
+            alert("D");
+        }
+
+
+        // if嵌套 if结构含有其他if结构
+        // 初级前端工程师 工作年限1以内 10K  2 15k  3 18K  中级 4-5 25K    高级 5年以上 30K
+        // 根据用户的级别和年限 给出对应的工资
+        var grade = prompt("请输入您的级别");
+        var age = parseInt(prompt("请输入您的工作年限"));
+        if (grade === "初级") {
+            // 对工龄进行判断
+            if (age === 1) {
+                alert("10000");
+            } else if (age === 2) {
+                alert("15000");
+            } else {
+                alert("18000");
+            }
+        } else if (grade === "中级") {
+            if (age >= 4 && age <= 5) {
+                alert("25000");
+            }
+        } else if (grade === "高级") {
+            if (age >= 5) {
+                alert("30000");
+            }
+        }
+    </script>
+</body>
+
+</html>

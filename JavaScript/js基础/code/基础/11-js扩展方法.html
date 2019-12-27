@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // NaN 数字类型 无法表示的数字
+        //判断非数字      纯数字字符串会自动转成数值
+        console.log(isNaN("2e")); //true 不是个数字是true
+        console.log(isNaN("22")); //false 是个数字是false
+        console.log(isNaN("22.34")); //false
+        console.log(isNaN(34)); //false
+        console.log(isNaN("abs")); //true
+
+        // eval() 
+        var a = 10;
+        //alert( eval("2+a") );
+        console.log(eval("2+a")); //12
+
+
+        eval("alert(34)"); //34
+    </script>
+</body>
+
+</html>

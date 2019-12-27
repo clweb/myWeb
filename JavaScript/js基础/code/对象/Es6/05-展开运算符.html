@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = [10, 20, 30];
+        let arr2 = [2, 4, 6];
+        //let newArr = arr1.concat(arr2);
+        let newArr = [...arr1, ...arr2];
+        console.log(newArr);
+
+        let uname = {
+            name: 'zs'
+        }
+        let age = {
+            age: 30
+        }
+        let stu = {
+            ...uname,
+            ...age
+        };
+        console.log(stu);
+
+        function max(arr) {
+            return Math.max(...arr);
+        }
+        //let max = Math.max(...[1,2,3,4]);
+        console.log(max([1, 2, 3, 4]));
+    </script>
+
+</body>
+
+</html>

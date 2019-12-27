@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ****天***时**分***秒
+        var endTime = new Date('2020/11/11');
+        var now = new Date();
+        //console.log(now.getTime()); // 从1970年1月1日 距离现在相差的毫秒数
+        var diff = endTime.getTime() - now.getTime(); // 现在到目标时间距离的毫秒数
+        diff = parseInt(diff / 1000);
+        // 1天 24*3600 10月27 11月11日
+        var days = parseInt(diff / (24 * 3600));
+        var hours = parseInt(diff % (24 * 3600) / 3600);
+        var minutes = parseInt(diff % 3600 / 60);
+        var seconds = diff % 60;
+        var str = '距离2020双十一还剩' + days + "天" + hours + '时' + minutes + '分';
+        str += seconds + '秒';
+        console.log(str);
+    </script>
+</body>
+
+</html>

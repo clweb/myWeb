@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 选择排序
+        /*  第一轮 第一个位置上的数与后面依次比较
+            10 3 -3 11 0
+            3 10 -3 11 0
+            -3 10 3 11 0
+            -3 10 3 11 0
+            第二轮 第二个位置的数与后面依次比较
+            -3 10 3 11 0
+            -3 3 10 11 0
+            -3 3 10 11 0
+            -3 0 10 11 3
+            ...
+        */
+        var arr = [10, 3, -3, 11, 0, 23];
+
+        function selectSort(arr) {
+            var temp;
+            // 选择排序
+            for (var i = 0; i < arr.length - 1; i++) {
+                // arr[i]与arr[j] j i+1~arr.length-1
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[j] < arr[i]) {
+                        temp = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        alert(selectSort(arr)); // -3,0,3,10,11
+    </script>
+</body>
+
+</html>

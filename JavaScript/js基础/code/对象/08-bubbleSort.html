@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 冒泡排序
+        var arr = [10, 2, 3, 12, 100, 0, -3, 11];
+
+        function bubbleSort(arr) {
+            // 控制轮数
+            for (var i = 0; i < arr.length - 1; i++) {
+                // 相邻两个数比较
+                for (var j = 0; j < arr.length - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        // 交换位置
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+        }
+        bubbleSort(arr);
+        console.log(arr);
+
+
+        /*
+          i=0 [0]~[1] [1]~[2] ... [5]~[6]  前一个数 0-5
+          i=1 [0]~[1] [1]~[2] ... [4]~[5]  0-4
+          ...
+          i=5 [0]~[1]                      0-(5-i)
+        */
+
+
+        /*
+           10,3,4,-3,9
+           
+           第一轮 每轮比较相邻两个数 总共比较4次
+             3 10 4 -3 9
+
+             3 4 10 -3 9
+             3 4 -3 10 9
+             3 4 -3 9 10
+           第二轮 总共3次 第二个较大值确定
+             3 4 -3 9 10
+             3 -3 4 9 10
+             3 -3 4 9 10
+           。。。
+           第四轮 
+
+
+           总结 n个数比较n-1轮次 每轮进行若干次相邻两数比较  
+        */
+    </script>
+</body>
+
+</html>

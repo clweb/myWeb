@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // es5 forEach()
+        var arr = [10, 30, 50, 70];
+        arr.forEach(function (item, index, arr) {
+            //console.log(item,index);
+            //console.log(arr);  
+            if (item >= 20) {
+                console.log(item);
+            }
+        });
+        // 找数组中最小值
+        var arr2 = [-2, 34, 0, -5, 6];
+        var min = arr2[0];
+        arr2.forEach(function (item, index, arr) {
+            if (item < min) {
+                min = item;
+            }
+        });
+        //alert(min);
+
+
+        // indexOf()
+        // 判断一个元素是否在数组中 存在的话 返回元素所在数组下标
+        // 不存在返回-1
+        var index = arr2.indexOf(34);
+        var index2 = arr2.indexOf(134);
+        console.log(index, index2); // 1 -1
+        // 练习 数组去重  [10,23,10,34,23,11]  [10,23,34,11]
+
+        // filter()
+        // 对原数组进行过滤 由每次函数返回值为true对应的元素组成一个新数组
+        // 原数组不变
+        var array = [10, 23, 21, 34, 44, 88];
+        var res = array.filter(function (item, index, arr) {
+            console.log(item);
+            return item % 2 === 0;
+        });
+        console.log(res);
+        console.log(array);
+
+        // map() 返回新的数组 新数组长度与原数组长度一样
+        // 新数组的每个元素 等于每次函数的返回值
+        var res2 = array.map(function (item, index, array) {
+            //return 0;
+        });
+        console.log(array); // 原数组不变
+        console.log(res2);
+
+        // reduce()
+        var sum = array.reduce(function (prev, next, currentIndex, arr) {
+            //console.log(arr); 
+            console.log(prev + "----" + next);
+            return prev + next;
+        }, 0); // 当第二个参数不传值是 prev 第一次默认是数组第一个元素 
+        // 传入第二个参数时 prev第一次就是该参数
+        console.log(sum);
+
+        /*[10,23,21,34,44,88]
+          10----23
+          undefined----21
+          undefined----34
+          undefined----44
+          undefined----88
+
+          第一次 prev指向数组第一个元素 
+                next指向数组第二个元素
+          后面 prev表示上一次函数的返回值,next每次指向下一个元素      
+       
+          prev 10 next 23 return 33
+          prev 33 next 21 return 33+21
+          prev 33+21 next 34 return 33+21+34
+          prev 33+21+34 next 44 return 33+21+34+44
+          prev 33+21+34+44 next 88 return 33+21+34+44+88
+        */
+    </script>
+</body>
+
+</html>

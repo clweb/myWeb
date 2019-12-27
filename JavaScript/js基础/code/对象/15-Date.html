@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建一个日期对象
+        var d = new Date();
+        console.log(d.toLocaleString());
+        // 日期对象和字符串转化
+        var str = '2019/11/11';
+        var d1 = new Date(str);
+        console.log(d1.toLocaleString());
+
+
+        //
+        var d2 = new Date(Date.parse(str));
+        console.log(d2.toLocaleString());
+    </script>
+</body>
+
+</html>

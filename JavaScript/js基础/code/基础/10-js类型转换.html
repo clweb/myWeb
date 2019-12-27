@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 把第一个非数字字符之前的数字转成整数
+        console.log(parseInt("23.23")); // 数字23
+        console.log(parseInt("23a.23")); // 数字23
+        console.log(parseInt("bb23a")); // NaN 
+        console.log(parseInt("237.2s3")); // 数字237
+        // 把第一个非数字且非小数点字符之前的数字转成小数
+        console.log(parseFloat("23.23")); //23.23
+        console.log(parseFloat("23a.23")); //23
+        console.log(parseFloat("bb23a")); //NaN
+        console.log(parseFloat("237.2s3")); //237.2
+
+        // 其他类型转成数字类型 除了数字之外,只要含有非小数点其他字符结果就是NaN
+        // Number() true---->1 false------>0
+        console.log(Number("23.23a")); // NaN
+        console.log(Number("23.23")); //23.23  
+        console.log(Number("23a")); //NaN
+        console.log(Number("23")); //23
+        console.log(Number(true)); //1
+        console.log(Number(false)); //0 
+
+        // Boolean() 其他类型转成布尔类型  非空字符串转成true 空字符串转成false
+        // 非0数字转成true 0转成false
+        console.log(Boolean("hello")); // true 
+        console.log(Boolean("23.23")); //  true
+        console.log(Boolean("")); //false
+        console.log(Boolean(23)); //true
+        console.log(Boolean(0)); //false
+        var num = 19;
+        var newNum = num.toString(); //类型转换
+        alert(typeof newNum); //string
+
+        var newNum = num.toString(8); //8进制转换
+        alert(newNum); //23
+    </script>
+</body>
+
+</html>

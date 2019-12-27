@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 函数内置一个对象arguments 接受我们所有的实参
+        // arguments.length 表示实参个数
+        // arguments.callee 表示arguments所在的函数
+        // 函数名.length 表示函数形参个数
+        function getSum(a, b) {
+            // console.log(arguments);
+            // console.log(arguments.length);
+            // console.log(arguments.callee);
+            // console.log(getSum.length);
+            if (arguments.length === getSum.length) {
+                // console.log(a+b);
+                console.log(arguments[0] + arguments[1]);
+            } else {
+                alert("抱歉,传递的参数个数不匹配");
+            }
+        }
+        getSum(10, -5);
+        //getSum(10); 
+        //getSum(10,20,30);
+
+        // 实现求任意数的和
+        function getSum2() {
+            // 对arguments
+            var sum = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            console.log(sum);
+        }
+        getSum2(1);
+        getSum2(2, 5);
+        getSum2(23, 45, 56);
+        getSum2(10, 20, 30, 40);
+    </script>
+</body>
+
+</html>

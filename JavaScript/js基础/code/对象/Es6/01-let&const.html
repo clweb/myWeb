@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 定义变量 var
+        var a = 10;
+        var a = 20;
+        console.log(a); // 允许重复定义
+        
+        console.log(b); // 变量声明提升
+        var b = 20;
+        var pi = 3.1415; // 不能定义常量
+        pi = 3.456;
+
+        if(true) {
+            var c = 20; // 不支持块级作用域
+        }
+        console.log(c);
+        */
+        /*
+          let不允许重复定义
+        */
+        //let a = 10;
+        //let a = 20; // 报错
+        // console.log(b); // 报错 没有变量声明提升
+        // let b = 20;
+
+        if (10 > 5) {
+            let c = 20; // 只能在当前块级作用域下有效
+            console.log(c);
+        }
+        //console.log(c); // c is not defined 
+
+        const PI = 3.1415926; // const定义的量 不需要重新赋值
+        //PI = 3.14;
+        //const NUMBER;
+
+        for (let i = 0; i < 3; i++) {
+            setTimeout(function () {
+                console.log(i);
+            });
+        }
+    </script>
+</body>
+
+</html>

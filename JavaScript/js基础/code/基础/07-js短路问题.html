@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var i = 10;
+        console.log(4 < 5 || i++); // true || 11 => true
+        console.log(4 > 5 && i++); // false && 11 => false
+        console.log(i); // 10
+
+        var i = 9;
+        console.log(0 || i++); //9 执行||运算符 从左到右执行 遇到0认为是假 直接返回第二个表达式的值   
+        console.log(i); // 10
+
+        console.log(5 || i++); //5
+        console.log(i); // 10
+
+
+        console.log(0 && ++i); //0 
+        console.log(i); //   9
+
+
+        console.log(6 && ++i); //10
+        console.log(i); //  10
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 打印我爱javascript
+        console.log("我爱javascript");
+        console.log("我爱javascript");
+        console.log("我爱javascript");
+        // 100句
+        for(var i=0; i<100; i++) {
+            console.log("我爱javascript");
+        }
+        */
+    // 控制100句的执行
+    // 函数引入 1可以对某些逻辑或者功能封装 2 将来可以被控制。可以反复使用
+    printMsg();
+
+    function printMsg() {
+      for (var i = 0; i < 1000; i++) {
+        console.log("我爱javascript");
+      }
+    }
+
+    /*
+      var fn;
+      fn(); // 报错
+      fn = function() {
+
+      }
+    */
+    fn(); // 函数调用 
+    var fn = function () {
+      alert("good good study");
+    }
+  </script>
+</body>
+
+</html>

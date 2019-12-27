@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        var num = 10;
+        var str = 'h' + 'i' + num +
+        */
+        // 模版字符串 1 反单引号引起来 2 遇到变量用${}括起来 3 原理 正则实现
+        let name = 'along';
+        let age = 32;
+        let res = `My name is ${name},I am ${age} years old`;
+        console.log(res);
+
+        let info = [name, age];
+        let lis = info.map(function (item) {
+            return `<li>${item}</li>`;
+        });
+        let ulString = `
+            <ul>
+                ${lis.join('')}
+            </ul>
+        `;
+        document.write(ulString);
+
+        function tag(str) {
+            console.log(str);
+            console.log(arguments); // {0:['My name is ',',I am ',' years old'],1:'along',2:32} 
+            let res = '';
+            let arr = [];
+            let arr2 = arguments[0];
+            for (var k in arguments) {
+                if (k != 0) {
+                    arr.push(arguments[k]);
+                }
+            }
+            for (var key in arr) {
+                res += arr2[key].toUpperCase() + arr[key].toString().toUpperCase();
+            }
+            res += arr2[arr2.length - 1].toUpperCase();
+            console.log(res);
+        }
+        // 模版标签
+        let res2 = tag `My name is ${name},I am ${age} years old`;
+    </script>
+</body>
+
+</html>

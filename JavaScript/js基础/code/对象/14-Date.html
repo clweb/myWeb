@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // new Array()
+        var d = new Date();
+        //console.log(d);
+        console.log(d.getFullYear()); // 2019 年
+        console.log(d.getMonth()); //9 0-11 0代表1月份
+        console.log(d.getDate()); //日 23
+        console.log(d.getHours());
+        console.log(d.getMinutes());
+        console.log(d.getSeconds());
+        console.log(d.getDay()); // 0-6 0代表星期日
+
+
+        function dateToString(d) {
+            // 20**年04月01日 19:20:18 星期几
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+            var y = d.getFullYear();
+            var m = toTwo(d.getMonth() + 1);
+            var _d = toTwo(d.getDate());
+
+            var h = toTwo(d.getHours());
+            var _m = toTwo(d.getMinutes());
+            var s = toTwo(d.getSeconds());
+            var weekday = d.getDay();
+
+            var str = y + '年' + m + '月' + _d + '日' + ' ';
+            str += h + ':' + _m + ':' + s + ' ';
+            str += arr[weekday];
+            return str;
+        }
+
+        function toTwo(v) {
+            return v < 10 ? '0' + v : v
+        }
+
+        var stringDate = dateToString(new Date());
+        console.log(stringDate);
+    </script>
+</body>
+
+</html>

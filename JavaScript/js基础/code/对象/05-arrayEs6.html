@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // api 
+        /*
+           功能
+           参数
+           返回值
+        */
+        // push() 向数组末尾添加一个或多个元素
+        // 返回值是改变后的数组长度
+        var arr = [1, 2, 3];
+        // arr[arr.length] = 4;
+        // console.log(arr);
+        var res = arr.push(4, 5);
+        console.log(res);
+        // unshift(); 向数组前面添加一个或多个元素
+        var res2 = arr.unshift(10, 20);
+        console.log(arr);
+        console.log(res2); // [10,20,1,2,3,4,5]
+        // pop()  删除数组最后一个元素 返回被删除的元素
+        var res3 = arr.pop();
+        console.log(arr);
+        console.log(res3);
+        // shift() 删除数组第一个元素 返回被删除的元素
+        var res4 = arr.shift();
+        console.log(arr);
+        console.log(res4);
+
+        // splice()
+        function fnSplice() {
+            var arr = [11, 34, 32, 56, 37];
+            // 从角标为1开始删除2个元素 返回值是删除元素组成的数组
+            //var res = arr.splice(1,2);
+            // // 从角标为1开始 添加元素  第二个参数为0 返回值是删除元素组成的数组
+            //var res = arr.splice(2,0,10);
+            // 替换
+            var res = arr.splice(2, 2, 100, 200);
+            console.log(arr);
+            console.log(res);
+        }
+        fnSplice();
+    </script>
+</body>
+
+</html>

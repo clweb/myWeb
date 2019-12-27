@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // + - * /
+        // + 当有字符串参与 表示字符串拼接
+
+        console.log(10 / 20); //0.5
+        console.log("3" + "4"); // "34" 
+        console.log(typeof ("3" + "4")); // string 
+        console.log(10 + "5"); // "10"+"5"---> "105"
+        var x = 10;
+        console.log(x + "2"); //"10"+"2"----> "102"
+        console.log("3" - "4"); //3-4 = -1
+        console.log("3" * "4"); //3*4 = 12
+        console.log(typeof ("20" + 20 - 10)); //"20"+"20"-10 -> "2020"-10->2020-10 = 2010 number
+        console.log("6" - false); //6 false转成数字0 "6"-0
+        console.log("6" - "5adasd"); // NaN not a number
+        console.log(typeof NaN); // number
+
+        /*
+          ++x与x++ 
+          相同点 最终x的值都会在原来基础上加1
+          区别
+          --x与x--
+        */
+        // var x = 10;
+        // ++x; // ++自增运算符 让变量自己加1
+        // console.log(x); // 11
+        var y = 10;
+        var k;
+        //k = y++; // y++整体的值是y之前的值
+        k = ++y; // ++y整体的值y加1后的值 k=11
+        console.log(y); // 11
+        console.log(k); // 11
+
+
+        // % 求余运算符 取模运算符
+        console.log(4 % 2); // 0
+        console.log(15 % 6); // 3
+
+        // =赋值号  var x = 10;
+        // == 不严格等于 只要内容相同即可 类型不要求 !=是对==否定
+        // === 严格等于  内容和类型都必须一样 !=是对===否定
+        console.log(5 < 6); // true 
+        console.log(6 <= 6); //true
+        console.log("10" <= "6"); //true      
+        console.log("abc" <= "ahf"); //true  
+        console.log("22a" <= 6); // false  
+        console.log("22a" >= 6); // false  
+        console.log("12" <= 6); //12<=6 false    
+        console.log("12" >= 6); //12>=6 true
+        console.log(10 == "10"); //true
+        console.log(10 === "10"); // false 
+        console.log(10 != "10"); // false
+        console.log(10 !== "10"); // true
+    </script>
+</body>
+
+</html>

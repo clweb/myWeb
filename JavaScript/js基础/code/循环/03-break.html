@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 打印1 2 3 直到遇到第一个即可以被3整除又可以被5整除的数为止
+        for (var i = 1;; i++) {
+            console.log(i);
+            // 判断i是否满足即可以被3整除又可以被5整除
+            if (i % 3 === 0 && i % 5 === 0) {
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>

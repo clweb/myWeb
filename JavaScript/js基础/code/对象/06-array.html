@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* slice()
+        功能: 截取数组 
+        返回值: 返回一个新数组，原数组不改变
+        参数: start 从什么位置开始
+             end 截至位置 不包括end 
+        */
+        var arr = [10, 20, 30, 40];
+        var res = arr.slice(1, 3);
+        console.log(arr, res);
+
+        /*
+          join()
+          把数组的元素用指定的符号拼接成一个大的字符串，
+          不传参数默认以逗号连接
+        */
+        var arr2 = [-10, 20, 34, 22];
+        var res2 = arr2.join(); // -10,20,34,22
+        var res3 = arr2.join("-");
+        console.log(res3);
+        /*
+          concat()
+          连接数组 返回是一个新数组
+        */
+        var arr3 = [1, 2, 3];
+        var arr4 = [4, 5, 6];
+        var arr5 = [7, 8, 9];
+        var arr6 = arr3.concat(arr4, arr5, 10); // [1,2,3,4,5,6,7,8,9]
+        console.log(arr6);
+        /*
+          reverse() 对数组元素进行逆序 会改变原数组 返回值
+          就是原数组改变后的结果
+        */
+        /*var res4 = arr3.reverse();
+        console.log(arr3);
+        console.log(res4 === arr3); // true
+        */
+        var arr7 = [];
+        for (var i = 0; i < arr3.length; i++) {
+            arr7.push(arr3[i]);
+        }
+        //console.log(arr7); [1,2,3]
+        var index = 0;
+        for (var i = arr7.length - 1; i >= 0; i--) {
+            arr3[index++] = arr7[i];
+        }
+        console.log(arr3);
+    </script>
+</body>
+
+</html>

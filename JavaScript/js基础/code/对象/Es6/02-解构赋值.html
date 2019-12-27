@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, [2], 3];
+        /*
+        let a = arr[0];
+        let b = arr[1];
+        let c = arr[2];
+        */
+        let [a, b, c] = arr;
+        console.log(a, b, c);
+
+        var {
+            name: name1,
+            age: age1
+        } = {
+            name: 'along',
+            age: '32'
+        }
+        console.log(name1);
+        console.log(age1);
+
+        let [, {
+            hobby: hb
+        }] = [{
+                name: 'along',
+                age: 32
+            },
+            {
+                hobby: ['coding', 'running']
+            }
+        ];
+        console.log(hb);
+
+        let {
+            a: a1,
+            c1 = 30
+        } = {
+            a: 10,
+            b: 20,
+            c1: 40
+        }
+        console.log(a1, c1);
+
+
+        function fn({
+            a,
+            b
+        }) {
+            console.log(a, b);
+        }
+        fn({
+            a: 10,
+            b: 20
+        });
+    </script>
+
+</body>
+
+</html>

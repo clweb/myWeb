@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script src="./public.js"></script>
+    <script>
+        // 产生一个随机颜色
+        // #a36633  0~f
+        function getColor() {
+            var str = '0123456789abcdef'; // 0-15
+            var color = "#";
+            // 循环6次 每次随机生成一个字符
+            for (var i = 0; i < 6; i++) {
+                var num = rand(0, 15);
+                //color += str.charAt(num);
+                color += str[num];
+            }
+            return color;
+        }
+        console.log(getColor());
+        var lis = document.getElementsByTagName("li");
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].style.backgroundColor = getColor();
+        }
+    </script>
+</body>
+
+</html>

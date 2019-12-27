@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(4 < 5 && 7 == 9); //false      0 乘以 任何数都得0      false 与 任何布尔值都是false 
+        console.log(4 < 5 && 7 == 7); //true      true  && true   true
+        console.log(4 > 5 && 5 == 7); //false      false && false false
+
+        console.log(4 < 5 || 7 == 9); //true   true  或 || 任何布尔值结果都是true   
+        console.log(4 < 5 || 7 == 7); //true  
+        console.log(4 > 5 || 5 == 7); //false
+
+        var i = 2020;
+        console.log(i % 3 == 0); //余1 false
+        console.log(i % 2 == 0 && i % 5 == 0); //除尽 true
+        // 判断闰年 能被4整除但不能被100整除 或者能被400整除
+        console.log(i % 4 == 0 && i % 100 != 0 || i % 400 == 0); //true
+    </script>
+</body>
+
+</html>

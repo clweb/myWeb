@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // startsWith() 以某字串开头
+        let url = 'http://www.baidu.com';
+        let flag = url.startsWith('Http'); // false
+        console.log(flag);
+        // endWith()
+        let img_name = '2.png';
+        let bool = img_name.endsWith('png');
+        console.log(bool); // true
+        // includes() 是否包含某字串
+        console.log('along666'.includes('L'));
+        // repeat()
+        console.log('abc'.repeat(3));
+        // padStart()/padEnd()
+        console.log('0'.padStart(8, 9)); // 8总长度 9填充字符 '77777770'
+        console.log('0'.padEnd(8, 9)); // 09999999
+    </script>
+</body>
+
+</html>

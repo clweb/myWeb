@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+          '10'
+          '3'
+          '-3'
+          '11'
+          '0'
+          '23'
+        */
+        var arr = [10, 3, -3, 11, 0, 23];
+        arr.sort(function (a, b) {
+            return b - a; // 降序 假如返回a-b是升序
+        });
+        console.log(arr); //  [-3, 0, 10, 11, 23, 3]
+        // 扩展 模拟sort方法
+    </script>
+</body>
+
+</html>

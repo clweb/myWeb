@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 描述一个学生
+        var stuName = 'along';
+        var age = 33;
+        var xueli = 'benke';
+        // 描述第二个学生
+        var stuName2 = 'lucy';
+        var age2 = 23;
+        var xueli2 = 'benke';
+
+        /*
+           对象是一个整体 从语法角度就是一个无序属性的集合
+           对象由特征和行为组成 特征在程序中通过属性描述
+           行为用函数描述
+        */
+        var along = {
+            name: "along", // 属性名:属性值  k:v
+            age: 33,
+            xueli: "benke",
+            birthday: {
+                year: 1988,
+                month: 9,
+                day: 10
+            },
+            teach: function () { // 方法
+                console.log("带大家月薪破30K");
+            }
+        }
+
+        // function fn() {
+        //     console.log("fn()");
+        // }
+        // fn();
+
+        // 对象.成员
+        console.log(typeof along);
+        console.log(along.age);
+        console.log(along['age']);
+        console.log(along.birthday.month);
+        //along.teach();
+        //teach(); 有错
+        var attr = 'xueli';
+        console.log(along.xueli);
+        console.log(along['xueli']);
+        console.log(along[attr]); // attr是变量 只能用中括号
+        console.log(along.attr); // undefined 
+        // 对象可以动态添加成员
+        along.wx = 'zxl7621485';
+        along.sing = function () {
+            console.log('singing');
+        }
+        console.log(along);
+    </script>
+</body>
+
+</html>

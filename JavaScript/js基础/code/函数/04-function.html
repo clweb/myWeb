@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // return 用于返回值
+        // return 一旦执行 后面的代码不会执行
+        // return; 此时return结束函数调用
+        function getSum(a, b) {
+            return a + b;
+            console.log('over'); // 无用
+        }
+
+        var res = getSum(10, 30);
+        //console.log(res);
+        res++;
+        alert(res);
+    </script>
+</body>
+
+</html>
