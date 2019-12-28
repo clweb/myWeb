@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数hw7</title>
+</head>
+
+<body>
+    <script>
+        /* 7 //定义一个函数  功能求任意两个数的和 或者差  或积  或 商 */
+        function fnOperation(num1, num2, op) {
+            switch (op) {
+                case 1:
+                    return num1 + num2;
+                    break;
+                case 2:
+                    return num1 - num2;
+                    break;
+                case 3:
+                    return num1 * num2;
+                    break;
+                case 4:
+                    return num1 / num2;
+                    break;
+                default:
+                    return 0;
+                    break;
+            }
+        }
+        console.log(fnOperation(5.5, 10, 1));
+        console.log(fnOperation(5.9, 10, 2));
+        console.log(fnOperation(5.5, 10, 3));
+        console.log(fnOperation(5.5, 10, 4));
+    </script>
+</body>
+
+</html>

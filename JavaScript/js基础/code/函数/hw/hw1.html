@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数hw1</title>
+</head>
+
+<body>
+    <script>
+        /* 1、	定义函数，功能是 输出m---n之间的闰年    传参数实现 */
+        function leapYear(m, n) {
+            if (m > n) {
+                document.write("传入参数m=" + m + ">n=" + n + "有误！<br/>");
+            } else if (m < 1000) {
+                document.write("传入参数m=" + m + "小于1000<br/>")
+            } else {
+                for (let index = m; index < n; index++) {
+                    if (index % 4 == 0 && index % 100 != 0 || index % 400 == 0) {
+                        document.write(index + "\n");
+                    }
+                }
+            }
+        }
+        leapYear(12, 32);
+        leapYear(1200, 32);
+        leapYear(1000, 2000);
+    </script>
+</body>
+
+</html>

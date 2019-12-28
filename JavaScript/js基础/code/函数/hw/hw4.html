@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数hw4</title>
+</head>
+
+<body>
+    <script>
+        /* 4 求2的平方的阶乘  + 3的平方的阶乘
+        （至少用两个函数实现，一个函数实现平方，一个函数实现阶乘） */
+        function fnSquare(sq) {
+            return sq * sq;
+        }
+
+        //求fac的阶乘
+        function fnFactorial(fac) {
+            if (fac == 1) {
+                return 1;
+            }
+            return fac * fnFactorial(fac - 1);
+        }
+        var res = fnFactorial(fnSquare(2)) + fnFactorial(fnSquare(3));
+        alert("2的平方的阶乘+3的平方的阶乘=" + res);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数hw5</title>
+</head>
+
+<body>
+    <script>
+        /* 5 计算 100—200之间所有素数的和 */
+        function isPrimeSum() {
+            var sum = 0;
+            for (var i = 100; i <= 200; i++) {
+                for (var j = 2; j <= i; j++) {
+                    if (i % j == 0) {
+                        break;
+                    } else if (j == i - 1) {
+                        sum += i;
+                    }
+                }
+            }
+            return sum;
+        }
+        alert("100-200之间的素数的和：" + isPrimeSum());
+    </script>
+</body>
+
+</html>

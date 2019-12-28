@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数hw2</title>
+</head>
+
+<body>
+    <script>
+        /*2、	函数实现  输出1—100中（7的倍数和带7的数除外）的数  (传参数实现)  */
+        function multiple7(m, n) {
+            document.write(m + "-" + n + "之间去除7的倍数和带7的数外，其他数分别是：<br/>");
+            for (let i = m; i <= n; i++) {
+                if (i % 7 == 0 || i % 10 == 7 || parseInt(i / 10) == 7) {
+                    continue;
+                }
+                document.write(i + "\t");
+            }
+            document.write("<br/>");
+        }
+        multiple7(1, 100);
+        multiple7(70, 80);
+    </script>
+</body>
+
+</html>

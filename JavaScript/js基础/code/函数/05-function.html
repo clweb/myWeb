@@ -44,8 +44,21 @@
             }
         }
         console.log(evenSum(100));
+
+
+
         // 练习斐波那契数列  0  1  1 2 3 5 8 。。。
         // 分别求出前n项 
+        function fac(num) {
+            if (num <= 1) {
+                return 1;
+            } else {
+                return fac(num - 1) + fac(num - 2);
+            }
+        }
+        for (let index = 0; index < 10; index++) {
+            console.log(fac(index));
+        }
     </script>
 </body>
 

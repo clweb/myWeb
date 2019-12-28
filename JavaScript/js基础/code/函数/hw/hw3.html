@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数hw3</title>
+</head>
+
+<body>
+    <script>
+        /* 3、	编写函数功能是将三个数按照从小到大顺序输出 */
+        function sort(a, b, c) {
+            //假设a<b<c
+            //如果假设不成立,则有三种情况 a>b a>c b>c 然后进行交换即可
+            var t = 0;
+            if (a > b) {
+                t = a;
+                a = b;
+                b = t
+            }
+            if (a > c) {
+                t = a;
+                a = c;
+                c = t;
+            }
+            if (b > c) {
+                t = b;
+                b = c;
+                c = t;
+            }
+            console.log(a + "<" + b + "<" + c);
+        }
+        sort(14, 54, 32);
+        sort(54, 12, 65);
+        sort(32, 21, 12);
+    </script>
+</body>
+
+</html>

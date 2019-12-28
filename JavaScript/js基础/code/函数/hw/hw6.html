@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数hw6</title>
+</head>
+
+<body>
+    <script>
+        /* 6 输出：100 可以拆成哪两个素数的和？ */
+
+        function isPrime(num) {
+            var count = 0;
+            for (var i = 1; i <= num; i++) {
+                if (num % i === 0) {
+                    count++;
+                }
+            }
+            if (count == 2) {
+                return true;
+            }
+            return false;
+        }
+
+        function fnConsole() {
+            for (var i = 2; i <= 50; i++) {
+                if (isPrime(i) && isPrime(100 - i)) {
+                    document.write(`100可以拆分为${i}、${100-i}两个素数的和<br/>`)
+                }
+            }
+        }
+        fnConsole();
+    </script>
+</body>
+
+</html>
