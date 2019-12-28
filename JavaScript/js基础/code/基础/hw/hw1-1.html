@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础hw1-1</title>
+</head>
+
+<body>
+    <script>
+        /* 1-1 计算任意一个三位数的和(三位数由用户输入) */
+        var numb;
+        do {
+            numb = parseInt(prompt("请输入一个三位数："));
+            if (numb < 100 || numb > 999 || isNaN(numb) || numb == "") {
+                continue;
+            } else {
+                break;
+            }
+        } while (true);
+        var sum = 0;
+        sum += parseInt(numb / 100);
+        sum += parseInt(numb % 100 / 10);
+        sum += numb % 10;
+        alert("三位数的和是：" + sum);
+    </script>
+</body>
+
+</html>

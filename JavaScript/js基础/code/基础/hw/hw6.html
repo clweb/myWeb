@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础hw6</title>
+</head>
+
+<body>
+    <script>
+        /* 6 输入月份，显示当月的天数 用switch实现   */
+        var month, day;
+        do {
+            month = parseInt(prompt("请输入月份:"));
+            if (month == "" || isNaN(month)) {
+                continue;
+            } else {
+                if (month < 1 || month > 12) {
+                    alert("超出范围,请重新输入");
+                    continue;
+                } else {
+                    break;
+                }
+            }
+        } while (true);
+        switch (month) {
+            case 12:
+            case 10:
+            case 8:
+            case 7:
+            case 5:
+            case 3:
+            case 1:
+                day = 31;
+                break;
+            case 11:
+            case 9:
+            case 6:
+            case 4:
+                day = 30;
+                break;
+            case 2:
+                var y = new Date().getFullYear();
+                if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0) {
+                    day = 29;
+                    break;
+                } else {
+                    day = 28;
+                    break;
+                }
+        }
+        alert(new Date().getFullYear() + "年\n月份：" + month + "\n本月天数：" + day);
+    </script>
+</body>
+
+</html>

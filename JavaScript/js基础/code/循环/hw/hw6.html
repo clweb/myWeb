@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环hw6</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            6 打印如下图形 
+   
+                    *
+                    **
+                    ***
+                    ****
+                    *****
+                        
+                        *
+                       ***
+                      *****
+                     *******
+
+
+                        *
+                       * *
+                      *   *
+                     *     *
+                      *   *
+                       * *
+                        *  
+
+                        *
+                       ***
+                      *****
+                     *******
+                      *****
+                       ***
+                        *
+            */
+        var num = parseInt(prompt("请输入一个正整数："));
+        this.document.write("------直角三角形------<br/>");
+        for (var i = 1; i <= num; i++) {
+            for (var j = 1; j <= i; j++) {
+                this.document.write("*");
+            }
+            this.document.write("<br/>");
+        }
+        this.document.write("------正三角形------<br/>");
+        for (var i = 0; i < num; i++) {
+            for (var j = num - 1 - i; j > 0; j--) {
+                this.document.write("&nbsp;");
+            }
+            for (var k = 0; k < 2 * i + 1; k++) {
+                this.document.write("*");
+            }
+            this.document.write("<br/>");
+        }
+        this.document.write("-------菱形------<br/>");
+        for (var i = 0; i < num; i++) {
+            for (var j = num - 1 - i; j > 0; j--) {
+                this.document.write("&nbsp;");
+            }
+            for (var k = 0; k < 2 * i + 1; k++) {
+                this.document.write("*");
+            }
+            this.document.write("<br/>");
+        }
+        for (var i = 0; i < num - 1; i++) {
+            for (var j = 0; j <= i; j++) {
+                this.document.write("&nbsp;");
+            }
+            for (var k = 0; k < 2 * (num - 1 - i) - 1; k++) {
+                this.document.write("*");
+            }
+            this.document.write("<br/>");
+        }
+        this.document.write("-------空心菱形------<br/>");
+        for (var i = 0; i < num; i++) {
+            for (var j = num - 1 - i; j > 0; j--) {
+                this.document.write("&nbsp;");
+            }
+            for (var k = 0; k < 2 * i + 1; k++) {
+                if (i == 0) {
+                    this.document.write("*");
+                } else if (k == 0 || k == 2 * i) {
+                    this.document.write("*");
+                } else {
+                    this.document.write("&nbsp;");
+                }
+
+            }
+            this.document.write("<br/>");
+        }
+        for (var i = 0; i < num; i++) {
+            for (var j = 0; j <= i; j++) {
+                this.document.write("&nbsp;");
+            }
+            for (var k = 0; k < 2 * (num - 1 - i) - 1; k++) {
+                if (k == 0 || k == 2 * (num - 2 - i)) {
+                    this.document.write("*");
+                } else {
+                    this.document.write("&nbsp;");
+                }
+            }
+            this.document.write("<br/>");
+        }
+    </script>
+</body>
+
+</html>

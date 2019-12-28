@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环hw4</title>
+</head>
+
+<body>
+    <script>
+        /*  4 一个员工入职10K 每年涨幅5% 问8年后月薪多少*/
+        var salary = 10000;
+        for (let y = 0; y < 8; y++) {
+            salary += salary * 0.05;
+        }
+        alert("月薪：" + (salary / 1000).toFixed(3) + "k");
+    </script>
+</body>
+
+</html>

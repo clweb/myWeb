@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环hw3</title>
+</head>
+
+<body>
+    <script>
+        /*3 输出m-n之间所有偶数和 奇数和 以及奇数个数 偶数个数
+            m和n用户自己输入 要求m<n  */
+        var m, n;
+        do {
+            m = parseInt(prompt("请输入m的值："));
+            if (m == "" || isNaN(m)) {
+                continue;
+            } else {
+                break;
+            }
+        } while (true);
+        do {
+            n = parseInt(prompt("请输入n的值："));
+            if (n == "" || isNaN(n)) {
+                continue;
+            } else {
+                if (n < m) {
+                    alert("输入n值:" + n + ",小于输入m的值：" + m + "\n重新输入");
+                    continue;
+                } else {
+                    break;
+                }
+            }
+        } while (true);
+        var eventSum = 0,
+            oddSum = 0;
+        var eventCount = 0,
+            oddCount = 0;
+        for (let index = m; index <= n; index++) {
+            if (index % 2 == 0) {
+                eventCount++;
+                eventSum += index;
+            } else {
+                oddCount++;
+                oddSum += index;
+            }
+        }
+        var sumStr = "\n偶数和：" + eventSum + ",奇数和：" + oddSum,
+            countStr = "\n偶数个数：" + eventCount + ",奇数个数" + oddCount;
+
+        alert(m + "-" + n + "之间：" + sumStr + countStr);
+    </script>
+</body>
+
+</html>

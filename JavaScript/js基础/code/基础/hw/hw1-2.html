@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础hw1-2</title>
+</head>
+
+<body>
+    <script>
+        /* 1-2 输入两个数 ，按照从小到大的顺序输出 ？ */
+        var num1, num2;
+        do {
+            num1 = parseInt(prompt("请输入第一个数："));
+            if (isNaN(num1) || num1 == "") {
+                continue;
+            } else {
+                break;
+            }
+
+        } while (true);
+        do {
+            num2 = parseInt(prompt("请输入第二个数："));
+            if (isNaN(num2) || num2 == "") {
+                continue;
+            } else {
+                break;
+            }
+
+        } while (true);
+        if (num1 > num2) {
+            alert(num2 + ',' + num1);
+        } else {
+            alert(num1 + ',' + num2);
+        }
+    </script>
+</body>
+
+</html>

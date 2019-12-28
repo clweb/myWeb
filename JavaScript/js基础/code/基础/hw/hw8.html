@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础hw8</title>
+</head>
+
+<body>
+    <script>
+        /* 8 计算某日是这一年的第几天. （扩展题） */
+        var month, day;
+        var y = new Date().getFullYear();
+        do {
+            month = parseInt(prompt("请输入月份(1-12)"));
+            if (isNaN(month) || month == "") {
+                continue;
+            } else {
+                if (month < 1 || month > 12) {
+                    alert("输入值:" + month + "超出(1-12)范围,重新输入");
+                    continue;
+                } else {
+                    break;
+                }
+            }
+        } while (true);
+        do {
+            day = parseInt(prompt("请输入日"));
+            if (isNaN(day) || day == "") {
+                continue;
+            } else {
+                if (month == 12 || month == 10 || month == 8 || month == 7 || month == 5 || month == 3 || month == 1) {
+                    if (day < 1 || day > 31) {
+                        alert("输入值:" + day + "超过0-31,重新输入");
+                        continue;
+                    } else {
+                        break;
+                    }
+                } else if (month == 11 || month == 9 || month == 6 || month == 4) {
+                    if (day < 0 || day > 30) {
+                        alert("输入值:" + day + "超过0-30,重新输入");
+                        continue;
+                    } else {
+                        break;
+                    }
+                } else if (month == 2) {
+                    if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0) {
+                        if (day > 29) {
+                            alert("输入值:" + day + "超过0-29,重新输入");
+                            continue;
+                        } else {
+                            break;
+                        }
+                    } else {
+                        if (day > 28) {
+                            alert("输入值:" + day + "超过0-28,重新输入");
+                            continue;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+            }
+        } while (true);
+        var total = 0;
+        switch (month) {
+            case 12:
+                total += 30;
+            case 11:
+                total += 31;
+            case 10:
+                total += 30;
+            case 9:
+                total += 31;
+            case 8:
+                total += 31;
+            case 7:
+                total += 30;
+            case 6:
+                total += 31;
+            case 5:
+                total += 30;
+            case 4:
+                total += 31;
+            case 3:
+                if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0) {
+                    total += 29;
+                } else {
+                    total += 28;
+                }
+                case 2:
+                    total += 31;
+                case 1:
+                    total += day;
+        }
+        alert(month + "月" + day + "日是" + y + "年的第" + total + "天");
+    </script>
+</body>
+
+</html>

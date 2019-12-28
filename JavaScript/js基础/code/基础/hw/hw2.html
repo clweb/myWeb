@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础hw2</title>
+</head>
+
+<body>
+    <script>
+        //2．用户输入自己的考试成绩，提示用户是否及格。如果及格了，弹出警告框“恭喜，你及格了”、“不要骄傲啊”。
+        //如果没有及格，那么弹出警告框“很遗憾，你没有及格”、“请继续努力啊”。 然后都弹出“么么哒”。(if)
+        var garde;
+        do {
+            garde = parseInt(prompt("请输入成绩："));
+            if (isNaN(garde) || garde == "") {
+                continue;
+            } else {
+                break;
+            }
+        } while (true);
+        if (garde >= 60) {
+            alert("恭喜,你及格了");
+            alert("不要骄傲啊");
+        } else {
+            alert("很遗憾,你没有及格");
+            alert("请继续努力啊");
+        }
+        alert("么么哒");
+    </script>
+
+</body>
+
+</html>

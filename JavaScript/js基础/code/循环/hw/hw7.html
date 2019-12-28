@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环hw7</title>
+</head>
+
+<body>
+    <script>
+        /* 7 找出所有水仙花数 
+            水仙花数是一个三位数 每位上的数的立方和等于它自己
+            153 = 1^3 + 5^3 + 3^3 */
+        var ge, ten, hund;
+        document.write("水仙花数：\n");
+        for (let index = 100; index < 1000; index++) {
+            ge = index % 10;
+            ten = parseInt(index / 10 % 10);
+            hund = parseInt(index / 100);
+            if (ge * ge * ge + ten * ten * ten + hund * hund * hund == index) {
+                document.write(index + "\t\t");
+            }
+        }
+    </script>
+</body>
+
+</html>
