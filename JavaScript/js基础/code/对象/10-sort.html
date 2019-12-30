@@ -20,10 +20,24 @@
         */
         var arr = [10, 3, -3, 11, 0, 23];
         arr.sort(function (a, b) {
-            return b - a; // 降序 假如返回a-b是升序
+            return a - b; // 降序 假如返回a-b是升序
         });
         console.log(arr); //  [-3, 0, 10, 11, 23, 3]
         // 扩展 模拟sort方法
+        function sortJ(arr) {
+            var temp;
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = 0; j < arr.length - 1 - i; j++) {
+                    if (arr[j] < arr[j + 1]) {
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(sortJ(arr));
     </script>
 </body>
 

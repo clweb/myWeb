@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组hw2</title>
+</head>
+
+<body>
+    <script>
+        /* 2、编写函数has(arr , 60) 判断数组中是否存在60这个元素，返回布尔类型 */
+        function has(arr, target) {
+            // return arr.some((item) => item == target);
+            return arr.includes(target);
+        }
+        var arr = [10, 20, 30, 40, 50, 60];
+        var flag = has(arr, 60);
+        console.log(flag);
+    </script>
+</body>
+
+</html>

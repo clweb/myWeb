@@ -12,13 +12,13 @@
     <script src="./public.js"></script>
     <script>
         // Math
-        console.log(typeof Math);
-        console.log(Math);
-        console.log(Math.PI);
+        console.log(typeof Math); //object
+        console.log(Math); //Math{}
+        console.log(Math.PI); //3.141592653589793
         // Math.abs() Math.pow() Math.ceil() Math.floor()
         // Math.max() Math.min() Math.random()
-        console.log(Math.abs(-6));
-        console.log(Math.pow(3, 4)); // 3的4次方
+        console.log(Math.abs(-6)); //6
+        console.log(Math.pow(3, 4)); // 3的4次方 81
 
         console.log(Math.ceil(10.9)); // 向上取整 11
         console.log(Math.ceil(10.1)); // 11
@@ -31,23 +31,23 @@
         console.log(Math.floor(-10.9)); // -11
 
         // Math.round() 四舍五入
-        console.log(Math.round(10.9));
-        console.log(Math.round(-10.9));
+        console.log(Math.round(10.9)); //11
+        console.log(Math.round(-10.9)); //-11
 
-        console.log(Math.max(10, 4, 100, -2, 11));
+        console.log(Math.max(10, 4, 100, -2, 11)); //100
 
         // Math.random() 产生一个[0,1)随机数
-        for (var i = 0; i < 100; i++) {
+        for (var i = 0; i < 10; i++) {
             console.log(Math.random());
         }
         // [0,1]
-        console.log(Math.round(Math.random()));
+        console.log(Math.round(Math.random())); //0
         // [0,10] 随机整数
         /*
            0<=Math.random()<1
            0<=0<=Math.random()*11<11
         */
-        for (var i = 0; i < 1000; i++) {
+        for (var i = 0; i < 10; i++) {
             //console.log(Math.floor(Math.random()*11));
             console.log(Math.round(Math.random() * 10));
         }

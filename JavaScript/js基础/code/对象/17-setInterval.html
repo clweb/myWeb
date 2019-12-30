@@ -16,36 +16,38 @@
 <body>
     <h1>距离2020双十一还剩<span id='d'></span>天<span id='h'></span>时<span id='m'></span>分<span id='s'></span>秒</h1>
     <script>
-        // window对象
-        //window.alert(123); window可以省略
-        console.log(window);
-        // clearInterval clearTimeout
-        // setInterval   setTimeout
-        // setInterval(function() {
-        //     // 
-        //     console.log('我爱中国');
-        // },1000); // 每隔1000毫秒执行函数中的代码
+        window.onload = function () {
+            // window对象
+            //window.alert(123); window可以省略
+            console.log(window);
+            // clearInterval clearTimeout
+            // setInterval   setTimeout
+            // setInterval(function() {
+            //     // 
+            //     console.log('我爱中国');
+            // },1000); // 每隔1000毫秒执行函数中的代码
 
-        var d = document.getElementById('d');
-        var h = document.getElementById('h');
-        var m = document.getElementById('m');
-        var s = document.getElementById('s');
-        // ****天***时**分***秒
-        var endTime = new Date('2020/11/11');
-        setInterval(function () {
-            var now = new Date();
-            var diff = endTime.getTime() - now.getTime(); // 现在到目标时间距离的毫秒数
-            diff = parseInt(diff / 1000);
-            // 1天 24*3600 10月27 11月11日
-            var days = parseInt(diff / (24 * 3600));
-            var hours = parseInt(diff % (24 * 3600) / 3600);
-            var minutes = parseInt(diff % 3600 / 60);
-            var seconds = diff % 60;
-            d.innerHTML = days;
-            h.innerHTML = hours;
-            m.innerHTML = minutes;
-            s.innerHTML = seconds;
-        }, 1000);
+            var d = document.getElementById('d');
+            var h = document.getElementById('h');
+            var m = document.getElementById('m');
+            var s = document.getElementById('s');
+            // ****天***时**分***秒
+            var endTime = new Date('2020/11/11');
+            setInterval(function () {
+                var now = new Date();
+                var diff = endTime.getTime() - now.getTime(); // 现在到目标时间距离的毫秒数
+                diff = parseInt(diff / 1000);
+                // 1天 24*3600 10月27 11月11日
+                var days = parseInt(diff / (24 * 3600));
+                var hours = parseInt(diff % (24 * 3600) / 3600);
+                var minutes = parseInt(diff % 3600 / 60);
+                var seconds = diff % 60;
+                d.innerHTML = days;
+                h.innerHTML = hours;
+                m.innerHTML = minutes;
+                s.innerHTML = seconds;
+            }, 100);
+        }
     </script>
 </body>
 

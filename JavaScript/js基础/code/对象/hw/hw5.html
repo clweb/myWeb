@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组hw5</title>
+</head>
+
+<body>
+    <script>
+        /*5、定义一个含有10个元素的数组  计算下标为奇数的元素的平均数（自定义函数实现）  */
+        function rand(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        }
+
+        function oddAvg(arr) {
+            var avg = 0,
+                sum = 0,
+                count = 0;
+            arr.forEach((item, index) => {
+                if (index % 2 != 0) {
+                    count++;
+                    sum += item;
+                }
+            });
+            return avg = sum / count;
+        }
+
+        var arr = [];
+        for (let i = 0; i < 10; i++) {
+            arr.push(rand(0, 100));
+        }
+        var res = oddAvg(arr);
+        console.log(arr);
+        console.log(res);
+    </script>
+</body>
+
+</html>

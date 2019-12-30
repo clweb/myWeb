@@ -22,19 +22,19 @@
         // arr[arr.length] = 4;
         // console.log(arr);
         var res = arr.push(4, 5);
-        console.log(res);
+        console.log(res); //5
         // unshift(); 向数组前面添加一个或多个元素
         var res2 = arr.unshift(10, 20);
-        console.log(arr);
+        console.log(arr); //
         console.log(res2); // [10,20,1,2,3,4,5]
         // pop()  删除数组最后一个元素 返回被删除的元素
         var res3 = arr.pop();
-        console.log(arr);
-        console.log(res3);
+        console.log(arr); //[10,20,1,2,3,4]
+        console.log(res3); //5
         // shift() 删除数组第一个元素 返回被删除的元素
         var res4 = arr.shift();
-        console.log(arr);
-        console.log(res4);
+        console.log(arr); //[20,1,2,3,4]
+        console.log(res4); //10
 
         // splice()
         function fnSplice() {
@@ -45,8 +45,8 @@
             //var res = arr.splice(2,0,10);
             // 替换
             var res = arr.splice(2, 2, 100, 200);
-            console.log(arr);
-            console.log(res);
+            console.log(arr); //[11,34,100,200,37]
+            console.log(res); //[32,56]
         }
         fnSplice();
     </script>
