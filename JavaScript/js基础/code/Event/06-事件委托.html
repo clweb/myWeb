@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>111111</li>
+        <li>22222</li>
+        <li>33333</li>
+        <li>44444</li>
+        <li>55555</li>
+    </ul>
+    <button>添加li</button>
+    <script>
+        // 给每个li绑定单击事件 单击发生后弹出每个li的内容
+        /*
+          事件委托 核心给父亲绑定 只操作一次DOM 提高程序性能
+        */
+        var oUl = document.querySelector('ul');
+        oUl.onclick = function(e) {
+            var e = e || window.event;
+            console.log(e.target);
+            alert(e.target.innerHTML);
+        }
+        
+        /*
+        var lis = document.querySelectorAll('li');
+        for(var i=0; i<lis.length; i++) {
+            lis[i].onclick = function() {
+                alert(this.innerHTML);
+            }
+        }
+        */
+
+        var btn = document.querySelector('button');
+        btn.onclick = function() {
+            var oLi = document.createElement('li');
+            oLi.innerHTML = '66666';
+            oUl.appendChild(oLi);
+        }
+    </script>
+</body>
+</html>

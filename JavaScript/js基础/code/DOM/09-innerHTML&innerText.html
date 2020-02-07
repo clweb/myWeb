@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id='ulist' class="ubox">
+
+    </ul>
+
+    <script>
+        /*
+           document.getElementById(id)
+           document.getElementsByTagName(tagName)
+           document.querySelector(selector)
+           document.querySelectorAll(selector)
+        */
+        //var ul = document.getElementsByTagName('ul')[0];
+        //var ul = document.querySelector('.ubox');
+        var ul = document.querySelectorAll('.ubox')[0];
+        // innerHTML 获取标签内部的内容 支持标签
+        var str = '<li id="li1">item1</li><li>item2</li>';
+        ul.innerHTML = str; 
+        console.log(ul.getElementsByTagName('li').length);
+        //alert(ul.getElementById('li1')); 报错
+    </script>
+</body>
+</html>

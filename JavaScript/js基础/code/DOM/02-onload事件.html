@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+            // 页面加载
+            onload = function() {
+                // 单击按钮 弹窗hello world
+                //事件源.事件 = 事件处理函数 
+                // 找事件源元素
+                var btn = document.getElementById('btn');
+                // 绑定事件
+                btn.onclick = function() {
+                    // 事件发生后执行的逻辑
+                    alert('hello world'); 
+                }
+            }
+            
+    </script>
+</head>
+<body>
+    <input type="button" value="点我" id="btn"/>
+</body>
+</html>

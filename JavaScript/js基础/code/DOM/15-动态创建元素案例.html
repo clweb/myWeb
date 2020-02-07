@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            return Math.round(Math.random() * (max - min)) + min;
+        }
+        // 每隔一段时间 创建一个图片  图片大小随机 位置随机 
+        var times = setInterval(createImg, 200);
+        //10秒后清除定时器
+        setTimeout(() => {
+            clearInterval(times);
+        }, 10000);
+
+        function createImg() {
+            var oImg = document.createElement('img');
+            oImg.src = 'star.gif';
+            // 添加到body
+            document.body.appendChild(oImg);
+            // 5~20 设置随机宽高
+            var num = rand(10, 30);
+            oImg.width = oImg.height = num;
+            // 设置随机位置
+            oImg.style.position = 'absolute';
+            var _left = rand(0, window.innerWidth - num);
+            var _top = rand(0, window.innerHeight - num);
+            oImg.style.left = _left + 'px';
+            oImg.style.top = _top + 'px';
+            oImg.onclick = function () {
+                this.remove(); // 点击删除
+            }
+        }
+
+        // 练习  
+    </script>
+</body>
+
+</html>

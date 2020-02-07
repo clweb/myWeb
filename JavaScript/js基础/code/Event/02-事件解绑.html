@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div onclick="alert('hello');">123</div>
+    <button>按钮</button>
+    <button>解绑</button>
+    <script>
+        var btn = document.querySelector('button');
+        // btn.onclick = function() {
+        //     alert('hehe');
+        // }
+        // document.querySelectorAll('button')[1].onclick = function() {
+        //     btn.onclick = null;
+        // }
+        function fn() {
+            alert('good');
+        }
+
+        btn.addEventListener('click',fn);
+        
+        document.querySelectorAll('button')[1].onclick = function() {
+            btn.removeEventListener('click',fn)
+        }
+
+        btn.attachEvent('onclick',function() {
+            console.log(123);
+        });
+        document.querySelectorAll('button')[1].onclick = function() {
+            btn.detachEvent('onclick',fn)
+        }
+
+
+        // 删除事件兼容处理
+        function removeEventListener(ele,eventName,callback) {
+            if (ele.removeEventListener) {
+                ele.removeEventListener(eventName,callback);
+            } else if (ele.detachEvent) {
+                ele.detachEvent('on' + eventName, callback);
+            } else {
+                ele['on'+eventName] = null;
+            }
+        }
+        
+
+        
+       
+    </script>
+</body>
+</html>

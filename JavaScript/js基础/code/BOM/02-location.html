@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <script>
+        // location
+        // URL
+        // https://www.taobao.com/?uname=zs
+        // location.href 获取或设置整个url
+        // location.host location.search获取参数 
+        // setTimeout(function() {
+        //     location.href = 'http://www.baidu.com';
+        // },4000);
+
+        // location.assign() 和href一样
+        // location.replace() 替换当前页面
+        // location.reload() 重新加载页面
+        var btn = document.querySelector('#btn');
+        btn.addEventListener('click',function() {
+            //location.assign('http://www.sina.com');
+            //location.replace('http://www.sina.com'); // 不能后退页面 因为不记录历史
+            location.reload();
+        });
+
+        //if(navigator.userAgent.match(/(phone|pad|pod|iphone|...)/))
+    </script>
+</body>
+</html>

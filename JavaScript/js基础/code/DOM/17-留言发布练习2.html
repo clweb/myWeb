@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="txt">
+    <span class="log"></span>
+    <script>
+        // 超过5条留言 删除第一条
+        var txt = document.querySelector('#txt');
+        var div = document.createElement('div');
+        var log = document.querySelector('.log');
+        txt.onfocus = function () {
+            console.log('获取焦点');
+            txt.value = '';
+        }
+        //初始化计数值
+        var count = 0;
+        txt.onblur = function () {
+            if (txt.value == '') {
+                log.innerHTML = '不能为空';
+                log.style.color = 'red';
+                txt.focus();
+            } else {
+                log.innerHTML = '';
+                document.body.appendChild(div);
+                var p = document.createElement('p');
+                div.insertBefore(p, div.children[0]);
+                p.innerText = txt.value;
+                count++;
+                if (count > 5) {
+                    div.childNodes[5].remove();
+                }
+                console.log('失去焦点');
+                txt.value = '';
+            }
+
+        }
+    </script>
+</body>
+
+</html>

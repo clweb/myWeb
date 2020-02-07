@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态元素创建表格</title>
+</head>
+
+<body>
+    行数<input type="text" name="h" id="hang">
+    列数<input type="text" name="l" id="lie">
+    <input type="button" value="创建" id="btn" />
+    <span class="log"></span>
+    <script>
+        // 根据行列数创建表格 表格的每一行再增加一列删除列
+        function queryS(typeName) {
+            return document.querySelector(typeName);
+        }
+
+        function create(tagName) {
+            return document.createElement(tagName);
+        }
+        var r = queryS('#hang');
+        var c = queryS('#lie');
+        var rValue = r.value;
+        var cValue = c.value;
+        var oTable = create('table');
+        var btn = queryS('#btn');
+        var log = queryS('.log');
+        var div = create('div');
+        document.body.appendChild(div);
+        oTable.border = 1;
+        oTable.cellSpacing = 0;
+        btn.onclick = function () {
+            if (isNaN(c.value) || isNaN(r.value)) {
+                log.innerHTML = '不能填写非数字';
+                log.style.color = 'red';
+            } else {
+                log.innerHTML = '';
+            }
+            div.appendChild(oTable);
+            var index = 0;
+            for (let i = 0; i < r.value; i++) {
+                var oTr = create('tr');
+                var startTd = create('td');
+                startTd.innerHTML = ++index + '.';
+                oTr.appendChild(startTd);
+                for (let i = 0; i < c.value; i++) {
+                    var oTd = create('td');
+                    with(oTd) {
+                        width = '50px';
+                        height = '40px';
+                        style.textAlign = 'center';
+
+                        innerText = c.value;
+                    }
+                    oTr.appendChild(oTd);
+                }
+                var endTd = create('td');
+                endTd.innerHTML = '<a href="javascript:;">删除</a>';
+                oTr.appendChild(endTd);
+                oTable.appendChild(oTr);
+            }
+            c.value = '';
+            r.value = '';
+            console.log(queryS('div'));
+
+            var as = queryS('div').querySelectorAll('a');
+            console.log(as);
+
+            for (let i = 0; i < as.length; i++) {
+                as[i].onclick = function () {
+                    if (confirm('确定要删除吗？')) {
+                        this.parentNode.parentNode.remove();
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

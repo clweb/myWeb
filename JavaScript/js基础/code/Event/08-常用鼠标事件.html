@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <div>我不希望你复制</div>
+    <script>
+        // document.addEventListener('contextmenu',function(e) {
+        //     e.preventDefault();
+        // });
+        document.addEventListener('selectstart',function(e) {
+            e.preventDefault();
+        });
+        var oDiv = document.querySelector('div');
+        oDiv.onclick = function(e) {
+            console.dir(e);
+            // 返回鼠标相对于浏览器窗口可视区坐标
+            console.log(e.clientX,e.clientY);
+            // 返回鼠标相对于电脑屏幕坐标
+            console.log(e.screenX,e.screenY);
+            // ie9+ 相当于文档页面
+            console.log(e.pageX,e.pageY);
+        }
+    </script>
+</body>
+</html>

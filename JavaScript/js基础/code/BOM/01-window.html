@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        //window.document.querySelector
+        var a = 10;
+        console.log(a,window.a);
+        function fn() {
+            console.log('hehe');
+        }
+        fn();// window.fn()
+        //var name = 20;
+        console.log(window.name);
+        console.log(window.b);
+
+        document.addEventListener('DOMContentLoaded',function() {
+            console.log(123);
+        });
+        // DOM0级或DOM2级绑定皆可
+        // 1 只要窗口大小发生像素变化 会触发改事件
+        // 2 可以实现响应式  window.innerWidth获取当前屏幕宽度
+        window.onresize = function() {
+            //console.log('窗口大小改变');
+            console.log(window.innerWidth);
+        }
+    </script>
+</body>
+</html>

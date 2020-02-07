@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">inner</div>
+    </div>
+    <script>
+        var outer = document.querySelector('.outer');
+        var inner = document.querySelector('.inner');
+        outer.addEventListener('click',function() {
+            console.log('outer');    
+        });
+        inner.addEventListener('click',function(e) {
+            var e = e || window.event;
+            console.log('inner');
+            //e.stopPropagation(); 
+            //e.cancelBubble = true;
+            // ie6-8 cancelBubble
+            if(e && e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+        });
+        document.addEventListener('click',function() {
+            console.log('document');
+        })
+    </script>
+</body>
+</html>

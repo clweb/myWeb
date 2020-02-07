@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            padding: 5px;
+            background-color: rgb(7, 15, 7);
+            border: 6px solid red;
+            border-top-width: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var oDiv = document.querySelector('div');
+        console.log(oDiv.clientTop); // 返回元素上边框宽度
+        console.log(oDiv.clientLeft);// 返回元素左边框宽度
+        console.log(oDiv.clientWidth);// 返回元素宽度 padding+内容宽
+        console.log(oDiv.clientHeight);// 返回元素高度 padding+内容高
+    </script>
+</body>
+</html>

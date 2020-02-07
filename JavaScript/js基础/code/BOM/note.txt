@@ -1,0 +1,98 @@
+ES + DOM + BOM
+1 DOM 文档对象模型 Document object model
+dom树
+
+               html
+                |
+        head        body
+         |           |
+       meta title   div 
+2 事件-----行为
+  三要素 事件类型(具体什么行为)、事件源（谁身上发生该行为）、事件处理
+  打开电脑 电脑 打开电脑按钮 电脑启动
+
+  js程序如何处理事件
+     事件源.事件 = 事件处理函数 
+
+DOM
+元素操作
+创建元素
+    1 document.write() 
+    2 innerHTML
+    3 document.createElement
+增加元素
+    appendChild()
+    insertBefore()
+删除元素
+    removeChild()/remove()
+修改元素
+    修改属性 src/href/title/...
+         setAttri.../getAtt.../removeAttr..
+    修改元素内容
+        innerHTML/innerText
+    修改表单元素
+        value/type/disabled/checked/...
+    修改元素样式 
+        style.***
+        className 
+查找元素  
+  1 api 
+
+  2 h5新增api
+
+  3 关系属性
+    parentNode
+    children
+    previousElementSibling 
+    nextElementSibling
+事件操作
+      事件源.事件 = 事件处理函数 
+      onclick
+      onmouseover/onmouseout
+      onfocus/onblur
+      onmousedown 
+      ... 
+offset系列
+- el.offsetParent
+   表示元素中带有最近定位的祖先元素，祖先元素都没有定位则返回body
+- el.offsetTop
+    表示元素距离其offsetParent上方的偏移
+- el.offsetLeft
+    表示元素距离其offsetParen左边框的偏移
+- el.offsetWidth
+   元素实际宽度 左右border+左右padding+width
+- el.offsetHeight
+    元素实际高度 上下border+上下padding+height
+  以上属性返回值不带单位
+
+       offset            vs           style
+1      获得的数据没有单位              带单位的字符串
+2      得到任意样式表样式              只获取行内样式
+3      offsetWidth包含三部分          style.width只包含width
+4      offsetWidth只读属性            style.width可以读写
+client系列 
+   可以动态获取元素边框大小、元素大小
+- el.clientTop
+- el.clientLeft
+- el.clientWidth
+- el.clientHeight
+ var oDiv = document.querySelector('div');
+        console.log(oDiv.clientTop); // 返回元素上边框宽度
+        console.log(oDiv.clientLeft);// 返回元素左边框宽度
+        console.log(oDiv.clientWidth);// 返回元素宽度 padding+内容宽
+        console.log(oDiv.clientHeight);// 返回元素高度 padding+内容高
+结果不带单位
+
+scroll系列
+- el.scrollTop
+- el.scrollLeft
+- el.scrollWidth
+    自身实际宽度 不含边框
+- el.scrollHeight
+    自身实际高度 不含边框
+
+
+
+
+
+

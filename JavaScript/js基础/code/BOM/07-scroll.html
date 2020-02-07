@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 6px;
+            border: 4px dashed skyblue;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        文字 文字文字文字文字文字文字文字文字文字
+        文字文字文字文字文字文字文字文字文字文字文字
+        文字文字文字文字文字文字文字文字文字文字文字
+        文字文字文字文字文字文字文字文字文字
+        文字 文字文字文字文字文字文字文字文字文字
+        文字文字文字文字文字文字文字文字文字文字文字
+        文字文字文字文字文字文字文字文字文字文字文字
+        文字文字文字文字文字文字文字文字文字
+        文字 文字文字文字文字文字文字文字文字文字
+        文字文字文字文字文字文字文字文字文字文字文字
+        文字文字文字文字文字文字文字文字文字文字文字
+        文字文字文字文字文字文字文字文字文字
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        console.log(box.scrollWidth);
+        console.log(box.scrollHeight);
+        console.log(box.scrollTop);
+        // 滚动条发生变化触发
+        box.addEventListener('scroll',function() {
+            console.log(this.scrollTop); // 被卷去的上侧距离
+        })
+    </script>
+</body>
+</html>

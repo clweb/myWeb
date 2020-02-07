@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div onclick="alert('hello');">123</div>
+    <button>按钮</button>
+    <script>
+        var btn = document.querySelector('button');
+        /*
+        btn.onclick = function() {
+            alert('hehe');
+        }
+        btn.onclick = function() {
+            alert('hihi');
+        }
+        */
+        // 第一个参数是字符串 表示事件类型 不带on 
+        // 第二个参数是事件处理函数
+        /* 特点 同一个元素可以绑定相同的事件 不会冲突
+        btn.addEventListener('click',function() {
+            alert('123');
+        });
+        btn.addEventListener('click',function() {
+            alert('456');
+        });
+
+        btn.attachEvent('onclick',function() {
+            console.log(123);
+        });
+        */
+
+
+        // 兼容处理
+        function addEventListener(ele,eventName,callback) {
+            if (ele.addEventListener) {
+                ele.addEventListener(eventName,callback);
+            } else if (ele.attachEvent) {
+                ele.attachEvent('on' + eventName, callback);
+            } else {
+                // ele.onclick = function() {}
+                ele['on'+eventName] = callback;
+            }
+        }
+        addEventListener(btn,'click',function() {
+            alert('ok');
+        });
+    </script>
+</body>
+</html>

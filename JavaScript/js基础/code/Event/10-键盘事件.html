@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('keyup', function (e) {
+            console.log('keyup');
+            console.log(e);
+            // 通过keyCode得到对应键的ASCII值
+            // 在keyup/keydown中 不区分大小写
+            // 在keypress中区分大小写
+            console.log(e.keyCode);
+            if (e.keyCode === 65) {
+                alert('你按的是a键');
+            }
+        });
+        document.addEventListener('keydown', function () {
+            console.log('keydown');
+        });
+        // keypress 不能识别功能键
+        document.addEventListener('keypress', function () {
+            console.log('keypress');
+        });
+        // 以上执行顺序 keydown-keypress-keyup
+
+        // 练习1 京东按键输入内容 按下s键 光标定位到搜索框 focus()
+
+        // 练习2 
+    </script>
+</body>
+
+</html>

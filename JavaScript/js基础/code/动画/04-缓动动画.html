@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 1;
+      }
+
+      p.box {
+        top: 220px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" style="width:300px;"></div>
+    <p class="box"></p>
+    <button id="btn">让p跑起来</button>
+    <button id="btn2">让p跑到100</button>
+    <script src="sport.js"></script>
+    <script>
+      var box = document.querySelector(".box");
+      var oP = document.querySelector("p");
+      var btn = document.querySelector("#btn");
+      var btn2 = document.querySelector('#btn2');
+      console.log(getStyle(box,'opacity'));
+      // animate(box,{'opacity': 50},function() {
+      //    animate(box,{'width': 400},function() {
+      //     animate(box, {'height': 400});
+      //   }); 
+      // });
+      animate(box,{
+        'left': 200,
+        'top': 300,
+        'width': 400,
+        'height': 400
+      })
+        
+    
+    </script>
+  </body>
+</html>

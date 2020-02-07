@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      p.box {
+          top: 220px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <p class="box"></p>
+    <button id="btn">让p跑起来</button>
+    <script>
+      // 让div运动到500px停下
+      var box = document.querySelector(".box");
+      var oP = document.querySelector('p');
+      var btn = document.querySelector('#btn');
+      //console.log(box.offsetLeft);
+      animate(box,500);
+      btn.addEventListener('click',function() {
+        animate(oP,200);
+      });
+      function animate(obj, target) {
+          // 确保元素只有一个定时器执行
+        clearInterval(obj.timer);  
+        // 运动核心就是 不断调整位置
+        obj.timer = setInterval(function() {
+          if (obj.offsetLeft >= target) {
+            return clearInterval(obj.timer);
+          }
+          obj.style.left = obj.offsetLeft + 1 + "px";
+        }, 30);
+      }
+    </script>
+  </body>
+</html>

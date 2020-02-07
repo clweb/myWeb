@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>aaaaaa</li>
+        <li>bbbbbb</li>
+        <li>cccccc</li>
+        <li>ddddddd</li>
+        <li>eeeeeee</li>
+    </ul>
+    <script>
+        // 一三五行背景色 红色 二四 绿
+        // 找到所有li 根据标签名找
+        var lis = document.getElementsByTagName('li');
+        for (var i = 0; i < lis.length; i++) {
+            if (i % 2 === 0) {
+                lis[i].style.backgroundColor = 'red';
+            } else {
+                lis[i].style.backgroundColor = 'green';
+            }
+        }
+
+        // 练习 1 鼠标放入li 当前li背景色变红 离开去除颜色
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function () {
+                this.style.backgroundColor = 'red';
+            }
+            lis[i].onmouseout = function () {
+                this.style.backgroundColor = '';
+            }
+        }
+        // 练习 2 在隔行变色基础上 鼠标移入当前元素变蓝色 离开恢复之前的颜色 
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function () {
+                this.style.color = 'blue';
+            }
+            lis[i].onmouseout = function () {
+                this.style.color = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com">baidu</a>
+    <div class="box">
+        我是div
+        <div class="son">son</div>
+    </div>
+
+    <script>
+        var box = document.querySelector('.box');
+        box.onclick = function(e) { // e是形参
+            var e = e || window.event; // 或var e = e || event
+            // event是事件对象 ie6-8通过window.event来获取事件对象
+            console.log(e); // window.event
+            console.log(e.target);// 触发事件的元素 var target = e.target || e.srcElement
+            console.log(this); // 绑定事件的对象
+        }
+
+        // box.onmouseover = fn;
+        // box.onmouseout = fn;
+
+        function fn(e) {
+            var e = e || window.event;
+            console.log(e.type);
+            
+        }
+
+        var a = document.querySelector('a');
+        a.onclick = function(e) {
+            var e = e || window.event;
+            console.log('hello');
+            // 阻止浏览器的默认行为 比如链接跳转 ie6-8 returnValue属性 e.returnValue
+            //e.preventDefault(); 
+            return false; // 也可以阻止默认行为 且没有兼容性问题        
+        }
+    </script>
+</body>
+</html>

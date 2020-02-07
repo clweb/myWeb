@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">inner</div>
+    </div>
+    <script>
+        var inner = document.querySelector('#inner');
+        var outer = document.querySelector('#outer');
+        // on***/attachEvent 只能得到冒泡阶段
+        inner.addEventListener('click',function() {
+            console.log('冒泡 inner');
+        }); // 第三个参数默认是false 表示处于冒泡阶段 假如是
+            // true表示捕获阶段
+        inner.addEventListener('click',function() {
+            console.log('捕获 inner');
+        },true);
+        
+        outer.addEventListener('click',function() {
+            console.log('捕获 outer');
+        },true);
+        outer.addEventListener('click',function() {
+            console.log('冒泡 outer');
+        },false);
+        document.body.addEventListener('click',function
+        () {
+            console.log('冒泡 body');
+        });
+        document.body.addEventListener('click',function
+        () {
+            console.log('捕获 body');
+        },true);
+
+        // document->html->body->outer->inner->outer->body...
+    </script>
+</body>
+</html>

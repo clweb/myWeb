@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>oninput测试</p>
+    <input type="text" name="" id="txt" value="123" />
+    <p id="log"></p>
+    <p>onchange测试</p>
+    <select name="" id="sel">
+        <option value="">请输入城市</option>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+    </select>
+    <select name="" id="sel2">
+        <option value="">请选择颜色</option>
+        <option value="red">红</option>
+        <option value="green">绿</option>
+        <option value="blue">蓝</option>
+    </select>
+    <script>
+        var txt = document.getElementsByTagName('input')[0];
+        var log = document.getElementById('log');
+        txt.oninput = function () {
+            log.textContent = txt.value;
+        }
+
+        var sel = document.getElementById('sel');
+        //alert(sel.value);
+        // 列表项发生改变
+        sel.onchange = function () {
+            alert(this.value);
+        }
+
+        // 练习3 下拉列表 列出三个颜色 选中某种颜色 网页（document.body）就设置该颜色
+        var sel2 = document.getElementById('sel2');
+        sel2.onchange = function () {
+            document.body.style.backgroundColor = this.value;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // 让div运动到500px停下
+        var box = document.querySelector('.box');
+        //console.log(box.offsetLeft);
+        
+        // 运动核心就是 不断调整位置
+        var timer = setInterval(function() {
+            if (box.offsetLeft >= 500) {
+                return clearInterval(timer);
+            }
+            box.style.left = box.offsetLeft + 1 + 'px';
+        },30);
+    </script>
+</body>
+</html>

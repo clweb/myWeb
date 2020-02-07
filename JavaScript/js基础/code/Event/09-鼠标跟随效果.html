@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        img {
+            position: absolute;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./heart.jpeg" width="120" alt="">
+    <script>
+        var pic = document.querySelector('img');
+        // mousemove 鼠标移动1px 事件触发一次
+        document.addEventListener('mousemove', function (e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            console.log(x + ',' + y);
+
+            // 给图片设置位置
+            pic.style.left = x - pic.width / 2 + 'px';
+            pic.style.top = y - pic.height / 2 + 'px';
+        });
+    </script>
+</body>
+
+</html>

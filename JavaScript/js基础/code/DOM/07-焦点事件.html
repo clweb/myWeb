@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="txt" />
+    <span id="msg"></span>
+    <script>
+        var txt = document.getElementById('txt');
+        var msg = document.getElementById('msg');
+        // 获得焦点事件
+        txt.onfocus = function () {
+            msg.innerHTML = '';
+            // console.log('获得焦点');
+        }
+        // 失去焦点事件
+        txt.onblur = function () {
+            // console.log('失去焦点');
+            var val = this.value;
+            if (isNaN(val)) {
+                msg.innerHTML = '不合法';
+                msg.style.color = 'red';
+            } else if (val == '') {
+                msg.innerHTML = '不能为空';
+                msg.style.color = 'red';
+            } else if (val.length < 6) {
+                msg.innerHTML = '长度不够';
+                msg.style.color = 'red';
+            } else {
+                msg.innerHTML = '正确';
+                msg.style.color = 'green';
+            }
+        }
+        /* 练习4
+        文本框获取焦点，清空信息
+	    文本框失去焦点时，
+		如果为空 ，提示  不能为空，
+		如果为非数字，提示不合法，
+		如果长度小于6，提示“长度不够”
+		如果为数字，提示正确
+        */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+事件
+1 注册事件
+   注册事件/绑定事件
+   DOM0级 特点 相同事件绑定 后面函数会覆盖前面的
+      onclick
+   DOM2级 ie9以下不支持
+      addEventListener()
+    ie9以下 attachEvent() 
+2 删除事件/解绑事件
+     DOM0 事件源.事件 = null;
+3 DOM事件流
+    页面接受事件的顺序，事件发生后会在元素节点之间按照某种
+    顺序传播
+    document->html->body->div->body->html->document
+         捕获阶段        当前目标阶段    冒泡阶段
+
+    有的事件不具有冒泡 焦点事件、onmouseenter/onmouseleave                    
+4 事件对象
+
+5 事件冒泡
+
+6 事件委托(事件代理、事件委派)
+   50
+
+7 常用鼠标或键盘事件
+  e.target
+  鼠标事件 
+      onclick/onmouseover/onmouseout
+              onmouseenter/onmouseleave
+              onfocus/onblur
+              onmouseup/onmousedown
+              onmousemove 鼠标移动
+      oncontextmenu  
+  鼠标事件对象  
+
+  键盘事件 keyup
+         keydown
+         keypress
+  键盘事件对象          
+    

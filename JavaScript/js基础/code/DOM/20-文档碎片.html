@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    var start = new Date().getTime();
+    /* 在页面中打印1000个按钮 7ms
+    for(var i=0; i<1000; i++) {
+        var btn = document.createElement('input');
+        btn.type = 'button';
+        btn.value = '按钮';
+        document.body.appendChild(btn);
+    }
+    */
+    /* 2281ms
+    var str = '';
+    for(var i=0; i<1000; i++) {
+       str += '<input type="button" value="按钮"/>';
+    }
+    document.body.innerHTML = str;
+    */
+
+
+    // 文档碎片  一块缓存
+    var cache = document.createDocumentFragment();
+    for (var i = 0; i < 500; i++) {
+        var btn = document.createElement('input');
+        btn.type = 'button';
+        btn.value = '按钮';
+        cache.appendChild(btn);
+    }
+    document.body.appendChild(cache);
+    var end = new Date().getTime();
+    console.log(end - start);
+</script>
