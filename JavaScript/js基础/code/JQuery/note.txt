@@ -1,0 +1,47 @@
+jQuery(jQ)
+html+css+js
+1 jQ是一个js库,封装了大量的特定的集合(函数和方法)
+ 如animate()、css()、show()等
+2 使用jQ大大提高开发效率,简化dom操作 
+常见的js库 jQuery YUI Dojo ExtJs zepto
+
+-------------------
+jQuery选择器
+
+$(selector)
+筛选方法
+   parent()               $("li").parent()
+   children(selector)     $("ul").children("li")
+   find(selector)         $("ul").find('p')
+   siblings(selector)     $("div").siblings("li") 
+   nextAll()
+   prevAll()
+   eq(index)              $("li").eq(2) === $("li:eq(2)")
+jQuery处理样式
+   css()  
+   addClass()/removeClass()/toggleClass()/hasClass() 
+jQuery动画效果
+   显示与隐藏 show()/hide()/toggle()  
+   滑动  slideDown()/slideUp()/slideToggle() 
+   淡入淡出  fadeIn()/fadeOut()/fadeToggle()/fadeTo()
+   animate()
+jQuery属性操作
+     prop()---设置或获取元素固有的属性
+     attr()---操作元素自定义属性 
+     data()---可以在指定元素上存取数据
+jQuery操作文本
+      html()/html('内容') 
+      text()
+      val() 
+jQuery元素操作(创建、添加、删除、遍历)
+   遍历
+      $('div').each(function(index,ele) {
+
+      })
+
+      $.each(object,function() {})
+
+   创建元素  $("<li></li>")   
+jQuery事件处理
+   ele.事件(function() {})      
+         

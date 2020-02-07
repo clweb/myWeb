@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="msg" cols="30" rows="10"></textarea>
+    <button>提交</button>
+   <script>
+        // replace()  stringObj.replace(substr/rg,replacement)
+        var str = 'hello world';
+        //var newStr = str.replace('hello','hi');
+        var newStr = str.replace(/hello/,'hi');
+        console.log(str);
+        console.log(newStr);
+        var btn = document.querySelector('button');
+        var tarea = document.querySelector('textarea');
+        btn.onclick = function() {
+            // g全局匹配  i忽略大小写  gi
+            tarea.value = tarea.value.replace(/激情|gay/gi,'**')
+        }
+        
+    </script>
+</body>
+</html>

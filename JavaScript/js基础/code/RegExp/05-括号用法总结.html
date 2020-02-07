@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var rg = /^[xyz]$/; // 只能是x或y或z
+        var rg2 = /^xyz{3}$/;
+        console.log(rg2.test('xyzxyzxyz'));
+        console.log(rg2.test('xyzzzz'));
+        var rg3 = /^(xyz){3}$/;
+        console.log(rg3.test('xyzxyzxyz'));
+        console.log(rg3.test('xyzxyzxyzxyz'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <input type="text" name="" id="">
+    <script src="./jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('.box').on('click', function(event) {
+                alert('haha');
+            });
+            $('input').on('focus', function() {
+                $(this).val('hehe');
+            });
+            // 自动触发事件 
+            // 方式一 元素.事件()
+            // $('.box').click();
+            // 方式二 元素.trigger('type')
+            // $('.box').trigger('click');
+            //方式三 元素.triggerHandler('type') 与以上两种区别在于不会触发事件默认行为
+            //$('.box').triggerHandler('click');
+            $('input').triggerHandler('focus');
+        });
+    </script>
+</body>
+</html>

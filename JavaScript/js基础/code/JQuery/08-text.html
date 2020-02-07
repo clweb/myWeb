@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>
+            <span>
+                span
+            </span>
+        </p>
+    </div>
+    <input type="text" value="双12" name="" id="">
+    <script src="./jquery.min.js"></script>
+    <script>
+        $(function () {
+            // 相当于innerHTML
+            // console.log($('div').html());
+            // $('div').html('welcome');
+            //  相当于innerText
+            //console.log($('div').text());
+            $('div').text('<p>welcome</p>');
+            // val() 相当于value
+            console.log($('input').val());
+            //  console.log($('input').val('请输入内容'));
+        });
+    </script>
+</body>
+
+</html>

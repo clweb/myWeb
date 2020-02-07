@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="nav">
+        <li>北京</li>
+        <li>上海</li>
+        <li>深圳</li>
+    </ul>
+    <script>
+        // 单击li 打印每个li的序号
+        var lis = document.querySelector('ul.nav').querySelectorAll('li');
+        /* 思路一 动态添加属性
+        for(var i = 0; i < lis.length; i++) {
+            lis[i].index = i;
+            lis[i].onclick = function() {
+                console.log(this.index);
+            }
+        }
+        */
+        /* 思路二闭包
+        for(var i = 0; i < lis.length; i++) {
+            (function(i) {
+                lis[i].onclick = function() {
+                   console.log(i);
+                } 
+            })(i);
+        } 
+        */  
+        /* es6 let 
+        for(let i = 0; i < lis.length; i++) {   
+            lis[i].onclick = function() {
+                console.log(i);
+            } 
+        } 
+        */
+        /* 3秒后 打印每个城市
+        for(var i = 0; i < lis.length; i++) {
+            // 闭包
+            (function(i) {
+                setTimeout(function() {
+                    console.log(lis[i].innerHTML);
+                },3000);
+            })(i);  
+        }*/
+        // 滴滴打车 3公里以内 14 每增加1公里收5元
+        // 堵车 在原来收费上多收5元
+        var c = (function() {
+            var base = 14;
+            var sum = 0;
+            return {
+                normal: function(n) {
+                    if (n <= 3) {
+                        sum = base;
+                    } else {
+                        sum = base + (n - 3) * 5;
+                    }
+                    return sum;
+                },
+                yj: function(flag) {
+                    return flag ? sum + 5 : sum
+                }
+            }
+        })();
+        c.normal(5);
+        console.log(c.yj(false));
+    </script>
+</body>
+</html>

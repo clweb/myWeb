@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            margin: 100px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .nav > li {
+            float: left;
+            width: 120px;
+            text-align: center;
+        }
+
+        .nav ul {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="nav">
+            <li>新闻
+                <ul>
+                    <li>热点新闻</li>
+                    <li>媒体报道</li>
+                    <li>经济之声</li>
+                </ul>
+            </li>
+            <li>产品
+                <ul>
+                    <li>产品A</li>
+                    <li>产品B</li>
+                    <li>产品C</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script>
+        $(function() {
+            /*
+            $(".nav").children('li').mouseenter(function() {
+                $(this).children('ul').stop().slideDown(500);
+            });
+            $(".nav").children('li').mouseout(function() {
+                $(this).children('ul').stop().slideUp(500);
+            });
+            */
+            // hover() 事件切换 鼠标经过和鼠标离开的复合写法
+            $('.nav').children('li').hover(function() {
+                $(this).children('ul').stop().slideDown(500);
+            },function() {
+                $(this).children('ul').stop().slideUp(500);
+            });
+        });
+    </script>
+</body>
+</html>

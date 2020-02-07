@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var reg = /asd/; // 只要包含asd这个字符串就返回true
+        console.log(reg.test('asdgfd')); //true
+        var reg2 = /^asd/; //以asd开头的才满足条件
+        console.log(reg2.test('asdgfd'));
+        console.log(reg2.test('gasdfd'));
+        var reg3 = /^asd$/; //精确匹配 只有asd才满足条件
+        console.log(reg3.test('asdgfd'));
+        console.log(reg3.test('gasdfd'));
+        console.log(reg3.test('asd'));
+    </script>
+</body>
+
+</html>

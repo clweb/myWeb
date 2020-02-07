@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script src="./jquery.min.js"></script>
+    <script>
+        var jq = jQuery.noConflict();
+        var sourceObj = {
+            name: 'along',
+            age: 33,
+            birthday: {
+                month: 9
+            }
+        };
+        var tObj = {
+            name: 'lily', // 将来会被源对象相同的属性覆盖
+            qq: '382867197' // 源对象没有的属性会保留
+        };
+        // 浅层拷贝 原对象的复杂数据类型地址拷贝给目标对象
+        // $.extend(tObj, sourceObj);
+        // console.log(tObj);
+        // tObj.birthday.month = 10;
+        // console.log(sourceObj.birthday.month);
+
+        jq.extend(true, tObj, sourceObj);
+        tObj.birthday.month = 10;
+        console.log(sourceObj.birthday.month);
+
+        // $ === jQuery
+        function $(sel) {
+            return document.querySelector(sel);
+        }
+        console.log($('.box')); // 自己封装的$函数
+        console.log(jq('.box'));
+    </script>
+</body>
+
+</html>

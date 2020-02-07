@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // RegExp
+        var regexp = new RegExp(/456/);
+        console.log(regexp);
+        // 直接量
+        var regexp2 = /abc/;
+        // 正则表达式对象方法 test() 检测某字符串是不是符合规则
+        // 返回值true表示有符合规则的字符组合 
+        console.log(regexp2.test('abcfg'));
+        console.log(regexp2.test('bacfg'));
+        console.log(regexp.test(456));
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>item1</li>
+        </ul>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script>
+        $(function () {
+            // 创建元素
+            var oLi = $('<li>item2 动态创建的</li>');
+            // 添加元素
+            //$('ul').append(oLi);
+            /* 添加到后面 */
+            oLi.appendTo($('ul'));
+            /* 添加到前面 */
+            // $('ul').prepend(oLi);
+
+            var oDiv = $('<div>我是后妈生的</div>');
+            $('.box').before(oDiv);
+
+            // 删除元素 remove()
+            //$('ul').remove();
+            //$('ul').empty();
+            // $('ul').html("");
+        });
+    </script>
+</body>
+
+</html>

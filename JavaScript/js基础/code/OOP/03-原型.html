@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //函数定义
+        function my() {
+
+        }
+        //类(对象)定义
+        function Student(name, age) {
+            // name,age叫对象的属性（成员）
+            this.name = name;
+            this.age = age;
+            /* study叫对象的方法 （成员）
+            this.study = function() {
+                console.log('day day up');
+            }
+            */
+        }
+        // 创建学生
+        var zs = new Student('zs', 22); // {name: 'zs', age: 22, study: ...}
+        var lisi = new Student('lisi', 19); // {name: 'lisi', age: 19, study: ...}
+        console.log(zs.study === lisi.study); // false
+
+        Student.prototype.run = function () {
+            console.log('running');
+        }
+        Student.prototype.study = function () {
+            console.log('day day up');
+        }
+
+        console.dir(Student.prototype);
+        zs.run();
+        lisi.run();
+        console.log(zs.study === lisi.study);
+        console.log(zs.run === lisi.run);
+        /*
+           原型定义的函数是可共享(将来构造函数的实例都可以共享)
+           每一个构造函数都有一个prototype属性,指向一个对象，假如
+           该对象定义了属性和方法 这些都会被构造函数拥有
+        */
+    </script>
+</body>
+
+</html>

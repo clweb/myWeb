@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 构造函数
+        function Student(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        /*
+        Student.prototype.study = function() {
+            console.log('good good study');
+        }
+        Student.prototype.run = function() {
+            console.log('running');
+        }
+        */
+        Student.prototype = {
+            constructor: Student, // 千万别忘记
+            study: function () {
+                console.log('good good study');
+            },
+            run: function () {
+                console.log('running');
+            }
+        }
+        var zs = new Student('zs', 18); // 实例对象
+        var lisi = new Student('lisi', 22);
+        zs.study();
+        zs.run();
+        console.log(Student.prototype);
+
+        /*     原型对象  对象原型*/
+        console.log(Student.prototype === zs.__proto__);
+        console.log(Student.prototype.constructor);
+        console.log(zs.constructor === Student);
+        console.log(zs.constructor === zs.__proto__.constructor);
+        console.log(zs.constructor === Student.prototype.constructor);
+
+
+
+        /*
+           构造函数原型protytype身上有一个属性constructor,它
+           的值指向构造函数
+           Student  ---------> Student.protytype
+                    <---------
+                    constructor
+        */
+    </script>
+</body>
+
+</html>

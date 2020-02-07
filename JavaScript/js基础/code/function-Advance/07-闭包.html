@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 全局作用域 局部作用域
+        var num = 10;
+        function f() {
+            var num2 = 20; // 函数内定义的变量 局部变量
+            console.log(num);
+            console.log(num2);    
+        }
+        f();
+        console.log(num2);
+        */
+        // 闭包 有权利访问另外一个函数作用域中的变量的函数
+        // fun闭包函数 fun2闭包
+        function fun() {
+            var a = 10;
+            function fun2() {
+                console.log(a);
+            }
+            //fun2();
+            return fun2;
+        }
+        var f = fun();
+        f(); // 闭包可以延伸变量作用范围
+        
+    </script>
+</body>
+</html>

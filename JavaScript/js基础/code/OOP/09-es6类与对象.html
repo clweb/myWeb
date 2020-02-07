@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class创建类 new创建对象
+        class Student {
+            // 构造函数 接受传递来的参数 返回一个实例对象
+            constructor(sname,age) {
+                this.sname = sname;
+                this.age = age;
+            }
+
+            study() {
+                console.log(this.sname + '是学霸');
+            } 
+            run() {
+                console.log('running');
+            }  
+        }
+        var zs = new Student('zs',22);
+        var lily = new Student('lily',26);
+        console.log(zs.sname,zs.age);
+        console.log(zs.study === lily.study);
+        zs.run();
+
+        /*
+          类里面所有函数不需要写function,
+          多个函数之间不需要添加逗号分割
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+       <ul>
+           <li>item1</li>
+       </ul>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script>
+        $(function() {
+            // $('.box').click(function() {
+            //     alert('ok');
+            // });
+            // $('.box').mouseenter(function() {
+            //     $(this).css('background','red');
+            // });
+
+            /* on() 方法
+            1 可以绑定多个事件，多个事件多个处理程序
+            2 实现事件委托
+            $('.box').on({
+                click: function() {
+                    alert('ok');
+                },
+                mouseenter: function() {
+                    //$(this).css('background','red');
+                    alert('ok');
+                }
+            });*/
+            // $('.box').on('click',function() {
+            //     alert('ok');
+            // });
+            /* 直接给子元素注册事件
+            $('ul li').on('click', function() {
+                console.log($(this).text());
+            }); 
+            */
+            $('ul').on('click', 'li' ,function() {
+                console.log($(this).text());
+            }); 
+            //$('ul').off(); // 解除ul身上所有的事件
+            // $('ul').off('click');
+            $('ul').off('click','li');
+
+            $('ul').append($('<li>item2</li>'));
+            
+            $('ul li').one('mouseenter', function() {
+                alert(123);
+            });
+        });
+    </script>
+</body>
+</html>

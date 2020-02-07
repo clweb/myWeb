@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Student(name, age) {
+            // name,age叫对象的属性（成员）
+            this.name = name;
+            this.age = age;
+            // study叫对象的方法 （成员）
+            this.study = function () {
+                console.log('day day up');
+            }
+        }
+
+        Student.nation = 'china'; // nation 静态成员 在构造函数本身添加的成员
+
+        // 创建学生
+        var zs = new Student('zs', 22); // {name: 'zs', age: 22, study: ...}
+        var lisi = new Student('lisi', 19);
+        // 构造函数内部通过this添加的成员 叫实例成员 访问实例成员 对象.成员
+        console.log(zs.name);
+        zs.study();
+        // 访问静态成员 只能通过构造函数去访问
+        console.log(Student.nation);
+        console.log(Student.age); // 实例成员不能通过构造函数访问 结构undefined
+    </script>
+</body>
+
+</html>

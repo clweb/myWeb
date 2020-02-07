@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度一下</a>
+    <input type="checkbox" name="" id="" checked>
+    <p index='1' data-uname='zs'>p元素</p>
+    <script src="./jquery.min.js"></script>
+    <script>
+        // ele.prop('属性名') 获取
+        var url = $('a').prop('href');
+        console.log(url);
+        $('a').prop('target','_blank');
+        $('input').change(function() {
+            console.log($(this).prop('checked'));
+        });
+        console.log($('p').prop('index')); // undefined
+        console.log($('p').attr('index'));
+        $('p').attr('class','demo'); 
+        $('p').data('age',22);
+        console.log($('p').data('age'));
+        console.log($('p').data('uname')); // 可以读取H5自定义属性data-uname
+    </script>
+</body>
+</html>

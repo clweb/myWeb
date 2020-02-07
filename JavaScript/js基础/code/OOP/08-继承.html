@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // call()
+        function fun(a,b) {
+            console.log(this);
+            console.log(a,b);
+            console.log('跟龙哥学前端,冲突月薪30k');
+        }
+        var obj = {
+            num: 100
+        };
+        //fun(); // window.fun() 此时this === window
+        // 1 call() 可以实现函数调用
+        //fun.call();
+        // 2 可以改变函数中this指向
+        //fun.call(obj,10,20);
+        
+        function Fa(name, age) {
+            console.log(this);
+            this.name = name;
+            this.age = age;
+        }
+
+        function Son(name,age) {
+            // new Son的时候 this指向{}
+            Fa.call(this,name,age); // Fa()
+        }
+
+        var zyc = new Son('张有才',22);
+        console.log(zyc.name,zyc.age);
+        
+    </script>
+</body>
+</html>

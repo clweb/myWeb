@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象直接量
+        var zs = {
+            name: 'zhangsan',
+            age: 18
+        };
+        // new Object() 通过构造函数创建 new Array()
+        var obj = new Object();
+        console.log(obj);
+
+        // 自定义构造函数
+        function Cat() {
+            this.color = 'black';
+        }
+
+        var c1 = new Cat(); // 类的实例
+        var c2 = new Cat();
+        console.log(c1);
+        console.log(c2);
+        //console.log(Cat());
+
+        function Girl() {
+            console.log(this);
+            this.age = 22;
+            this.xueli = 'benke';
+        }
+        var girl1 = new Girl();// {age: 22, xueli: 'benke'}
+        var girl2 = new Girl();
+        console.log(girl1);
+        console.log(girl1 === girl2); // false
+        /*
+          new 构造函数
+          1 在内存中创建一个新的空对象 {}
+          2 让函数中的this指向空对象 this === {}
+          3 开始执行函数体 {age: 22, xueli: 'benke'}
+          4 返回该对象 (构造函数中不需要写return)
+        */
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

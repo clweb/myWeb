@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>aaaa</div>
+    <div>bbbb</div>
+    <div>cccc</div>
+    <div>dddd</div>
+    <script src="./jquery.min.js"></script>
+    <script>
+        $(function() {
+            /*
+            $('div').css('background','red');
+            */
+            var num = 1;
+            // $("div").each(function(index,ele) {
+            //     // ele 原生dom元素
+            //     console.log(index);
+            //     console.log(ele);
+            //     $(ele).html(num++);
+            // });
+            $.each($('div'),function(i,ele) {
+                console.log(i,ele);
+            });
+            $.each([10,20,30],function(i,ele) {
+                console.log(i,ele);   
+            });
+            $.each({name: 'along', age: 32},function(i,ele) {
+                console.log(i,ele);   
+            });
+        });
+    </script>
+</body>
+</html>

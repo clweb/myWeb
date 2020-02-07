@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">123456</div>
+    <script src="jquery.min.js"></script>
+     <script>
+         // window.onload = function() {}
+         //$(".box").hide(2000);
+         /* 入口函数 等页面DOM加载完毕再去执行代码 相当于原生js的DOMContentLoaded
+         $(document).ready(function() {
+            $(".box").hide(2000);
+         });
+         */
+        // DOM对象
+        var box = document.querySelector('.box');
+        var $box = $('.box'); // jQuery对象
+        console.log(box.innerHTML);
+        console.log(box);
+        console.log($box);
+        // DOM对象转jQuery对象 $(DOM对象)
+        console.log($(box).html());
+        // jQuery对象转DOM对象 $("div")[index] 或$('div').get(index)
+        console.log($box[0].innerHTML,$box.get(0).innerHTML);
+         $(function() {
+            $(".box").hide(2000);
+         });
+
+         // $ === jQuery
+         // $ 是顶级对象
+     </script>
+   
+</body>
+</html>

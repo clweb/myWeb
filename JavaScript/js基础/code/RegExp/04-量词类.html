@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var rg = /^c*$/; // *表示可以出现0次或多次 >=0 {0,}
+        console.log(rg.test('')); //true
+        console.log(rg.test('c')); //true
+        console.log(rg.test('cc')); //true
+        console.log(rg.test('adfg')); //false
+        var rg = /^c+$/; // +表示可以出现1次或多次 >=1 {1,}
+        console.log(rg.test('')); // false
+        console.log(rg.test('c')); // true
+        console.log(rg.test('cc')); // true
+        console.log(rg.test('adfg')); //false
+        var rg = /^c?$/; // +表示可以出现1次或0次 0 || 1 {0,1}
+        console.log(rg.test('')); // true
+        console.log(rg.test('c')); // true
+        console.log(rg.test('cc')); // false
+        console.log(rg.test('adfg')); //false
+        var rg = /^c{3}$/; // 重复3次
+        console.log(rg.test('')); // false
+        console.log(rg.test('c')); // false
+        console.log(rg.test('cc')); // false
+        console.log(rg.test('ccc')); // true
+        var rg = /^c{3,}$/; // 至少3次
+        console.log(rg.test('')); // false
+        console.log(rg.test('c')); // false
+        console.log(rg.test('cc')); // false
+        console.log(rg.test('ccccc')); // true
+        var rg = /^c{3,5}$/; // 至少3次至多5次
+        console.log(rg.test('')); // false
+        console.log(rg.test('c')); // false
+        console.log(rg.test('ccc')); // true
+        console.log(rg.test('cccccc')); // false
+    </script>
+</body>
+
+</html>

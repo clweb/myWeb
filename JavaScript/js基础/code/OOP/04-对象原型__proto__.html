@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(name,age) {
+            // name,age叫对象的属性（成员）
+            this.name = name;
+            this.age = age;
+        }
+        // 创建学生
+        var zs = new Student('zs', 22); // 
+        var lisi = new Student('lisi', 19); //   
+        Student.prototype.run = function() {
+            console.log('running');
+        }
+        Student.prototype.study = function() {
+            console.log('day day up');  
+        }
+        zs.run();
+        // true
+        console.dir(zs.__proto__ === Student.prototype); // true
+        console.dir(lisi.__proto__ === Student.prototype); // true
+        console.log(zs.__proto__ === lisi.__proto__); // true
+        
+        /*
+           对象都会有一个属性__proto__(非标准属性),指向构造函数的prototype原型对象
+        */
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            padding: 10px;
+            border: 6px dashed #ccc;
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script src="./jquery.min.js"></script>
+    <script>
+       $(function() {
+           // width()/height() 设置或获取width和height
+           //alert($('.box').width()); // 200
+           //alert($('.box').height());  
+           //$('.box').width(300)
+           // innerWidth()/innerHeight() 获取设置 width+padding或height+padding
+           //alert($('.box').innerWidth()); // 220
+           // outerWidth()/outerHeight() 获取设置 width+padding+border或height+padding+border
+           //alert($('.box').outerWidth());
+           // outerWidth(true)/outerHeight(true) 获取设置 width+padding+border+margin或height+padding+border+margin
+           alert($('.box').outerWidth(true));
+       });    
+    </script>
+</body>
+</html>
