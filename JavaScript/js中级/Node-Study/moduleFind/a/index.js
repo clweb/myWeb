@@ -1,0 +1,1 @@
+console.log('a文件夹下a.js被执行了');
