@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  {{if age >= 16}}
+  可以考取大学
+  {{else}}
+  回高中读书
+  {{/if}}
+
+  <ul>
+    {{each students}}
+    <li>
+        {{$value.name}}
+        {{$value.age}}
+        {{$value.sex}}
+    </li>
+    {{/each}}
+  </ul>
+</body>
+
+</html>
